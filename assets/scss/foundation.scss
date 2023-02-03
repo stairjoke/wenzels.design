@@ -1,0 +1,42 @@
+@use 'scss-variables';
+@use 'colors';
+@use 'typography';
+@use 'responsive-content';
+
+@use 'header';
+@use 'main-menu';
+
+//Foundational Styles, required by all page types
+
+:root {
+  --grid-gap-desktop: 3rem;
+  --grid-gap-mobile: 1rem;
+
+  --body-margin: 0.5rem;
+  @media (min-width: #{scss-variables.$break-point-XS-phone}) {
+    --body-margin: 1rem;
+  }
+
+  @media (min-width: #{scss-variables.$break-point-phone}) {
+    --body-margin: 1.5;
+  }
+
+  @media (min-width: #{scss-variables.$break-point-tablet}) {
+    --body-margin: 3rem;
+  }
+}
+
+body {
+	// Body font-size is determined by the browser. All
+	// PX units from the design resource are converted
+	// to REM using 1rem = 16px
+
+  margin: var(--body-margin);
+  padding: 0;
+  background: var(--color-page, #f0f);
+}
+
+svg.icon {
+	width: 1.5rem;
+	height: 1.5rem;
+}

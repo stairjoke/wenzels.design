@@ -1,0 +1,31 @@
+// Color variables
+
+//Palette
+$color-day-body-text: #212121;
+$color-day-dimmed-text: #8C8C8C;
+$color-day-link-text: #545454;
+$color-day-inverted-text: #FFFFFF;
+$color-day-HC-text: #000000;
+
+$color-day-visual-grouping: #F3F2F1;
+$color-day-page: #FCFDFB; //#FDFCFB;
+
+$color-day-accent: #5B8D3E; //#F27222;
+$color-day-success: #0AAE49;
+$color-day-error: #AE0A38;
+
+//CSS Variables
+:root {
+  --text-color-body: #{$color-day-body-text};
+  --text-color-dimmed: #{$color-day-dimmed-text};
+  --text-color-link: #{$color-day-link-text};
+  --text-color-inverted: #{$color-day-inverted-text};
+  --text-color-high-contrast: #{$color-day-HC-text};
+
+  --color-visual-grouping: #{$color-day-visual-grouping};
+  --color-page: #{$color-day-page};
+
+  --color-accent: #{$color-day-accent};
+  --status-color-success: #{$color-day-success};
+  --status-color-error: #{$color-day-error};
+}

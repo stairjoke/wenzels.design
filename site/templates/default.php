@@ -29,7 +29,7 @@ echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 		<meta charset="UTF-8">
 		
 		<!-- Using Kirby CSS feature -->
-		<?= css('site/assets/foundation.css') ?>
+		<?= css('assets/foundation.css') ?>
 		
 		<!-- CONTAINS A COLOR THAT CANNOT BE REFERENCED FROM CSS COLOR VARIABLES, NEEDS TO BE MAINTAINED! -->
 		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCFDFB">

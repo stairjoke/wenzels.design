@@ -1,0 +1,16 @@
+@use 'scss-variables';
+
+// Styles for the global page header
+
+header {
+  display: flex;
+  gap: var(--grid-gap-mobile);
+
+  @media (min-width: #{scss-variables.$break-point-desktop}) {
+    gap: var(--grid-gap-desktop);
+  }
+
+  h1 {
+    flex-grow: 1;
+  }
+}

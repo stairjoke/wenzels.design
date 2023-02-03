@@ -13,7 +13,7 @@
 
   font-size: 1rem;
   line-height: 1.5rem;
-  color: var(--textColor-body);
+  color: var(--text-color-body);
 }
 
 body {
@@ -31,12 +31,12 @@ p {
 a {
   &:link, &:active, &:visited {
     text-decoration: underline;
-    color: var(--textColor-link, #f0f);
+    color: var(--text-color-link, #f0f);
   }
 
   &:hover, &:focus {
     text-decoration: underline;
-    color: var(--color-accent-1, #f0f);
+    color: var(--color-accent, #f0f);
   }
 }
 
@@ -81,7 +81,7 @@ em, strong {
 
   font-size: 2rem;
   line-height: 3rem;
-  color: var(--textColor-high-contrast, #f0f);
+  color: var(--text-color-high-contrast, #f0f);
 }
 
 @mixin S-headline {
@@ -108,7 +108,7 @@ h1 {
   font-size: 4rem;
   line-height: 6rem;
 
-  color: var(--textColor-dimmed, #f0f);
+  color: var(--text-color-dimmed, #f0f);
 }
 
 @mixin S-sectionTitle {
@@ -229,5 +229,9 @@ p.teaser {
 }
 
 .dim {
-  color: var(--textColor-dimmed, #f0f);
+  color: var(--text-color-dimmed, #f0f);
+}
+
+.accent {
+  color: var(--color-accent, #f0f)
 }
