@@ -1,0 +1,51 @@
+//Projects
+#projects {
+	article {
+		background-color: var(--color-visual-grouping);
+		min-height: 1em;
+		margin-bottom: 48px;
+		padding: 24px;
+		
+		container-name: project;
+		container-type: inline-size;
+		
+		.contained-flex {
+			height: 100%;
+			
+			@container (min-width: 550px){
+				display: flex;
+				flex-direction: row;
+				gap: 24px;
+				
+				.illustration {
+					margin-bottom: 0;
+					aspect-ratio: unset;
+					
+					img {
+						position: relative;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+				
+				.description {
+					width: 33.33%;
+					min-width: 240px;
+					margin-top: 0;
+				}
+			}
+		}
+		
+		.illustration {
+			margin-bottom: 24px;
+			order: 2;
+			max-width: 550px;
+			width: 100%;
+		}
+		
+		.description {
+			order: 1;
+			margin-top: var(--space-full);
+		}
+	}
+}

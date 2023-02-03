@@ -1,0 +1,133 @@
+@use 'globals';
+@use 'colors';
+@use 'typography';
+
+//Header
+header {
+	display: flex;
+	gap: 16px;
+	
+	@media (min-width: #{globals.$break-point-desktop}) {
+		gap: 48px;
+	}
+	
+	h1 {
+		flex-grow: 1;
+	}
+	
+	label {
+		position: absolute;
+		top: calc(var(--bodyMargin) + 4.5px); //To align with text
+		right: var(--bodyMargin);
+		z-index: 101;
+		
+		@media (min-width: #{globals.$break-point-tablet}) {
+			top: 10px;
+		}
+	}
+	
+	nav {
+		/*
+		The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
+		*/
+		
+		.menu {
+			display: none;
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			right: 0;
+			left: 0;
+			
+			background-color: var(--color-page);
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 24px;
+		}
+		
+		input[type=checkbox] {
+			visibility: hidden;
+			position: absolute;
+			left: -5000px;
+			
+			& + label #close {
+				display: none;
+			}
+			
+			&:checked {
+				& ~ label {
+					position: fixed;
+				}
+				& ~ .triggered #close {
+					display: unset;
+				}
+				
+				& ~ .triggered #menu {
+					display: none;
+				}
+				& ~ .menu.triggered {
+					display: flex;
+					
+					margin: 0;
+					padding: 48px;
+					min-height: 100vh;
+					min-height: 100lvh;
+					
+					@include colors.subtle-shadow;
+				}
+			}
+		}
+		
+		ul {
+			list-style: none;
+			padding: 0;
+		}
+		
+		a {
+			@media (max-width: #{(globals.$break-point-tablet - 1px)}) {
+				&:not(*[role=button]) {
+					@include typography.S-headline;
+				}
+			}
+			
+			&:link, &:active, &:visited {
+				text-decoration: none;
+				color: var(--textColor-link);
+			}
+			
+			&:hover, &:focus {
+				text-decoration: underline;
+				color: var(--textColor-body);
+			}
+			&.current {
+				text-decoration: underline;
+			}
+		}
+		
+		@media (min-width: #{globals.$break-point-tablet}) {
+			input, label {
+				display: none;
+			}
+			
+			.menu {
+				display: flex;
+				position: unset;
+				
+				flex-direction: row;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 24px;
+				padding: 16px 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
+				margin: 0;
+			}
+			
+			a {
+				padding: 4px 8px;
+			}
+			a[role=button] {
+				padding: 2px 6px;
+			}
+		}
+	}
+}

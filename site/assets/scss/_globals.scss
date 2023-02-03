@@ -1,0 +1,30 @@
+//Globals
+
+//break Points
+$break-point-XS-phone-: 375px;
+$break-point-XS-phone: 375px;
+$break-point-phone-: 390px;
+$break-point-phone: 390px;
+$break-point-phablet-: 413px;
+$break-point-phablet: 414px;
+$break-point-tablet-: 743px;
+$break-point-tablet: 744px;
+$break-point-desktop-S-: 1023px;
+$break-point-desktop-S: 1024px;
+$break-point-desktop-: 1279px;
+$break-point-desktop: 1280px;
+$break-point-desktop-L-: 1559px;
+$break-point-desktop-L: 1560px;
+
+//Corner Radius
+$radius-S: 4px;
+
+//Spaces
+:root {
+	--space-full: 2rem;
+	--space-line: 1rem;
+	@media (min-width: #{$break-point-tablet}) {
+		--space-full: 3rem;
+		--space-line: 1.5rem;
+	}
+}

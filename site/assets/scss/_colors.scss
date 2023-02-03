@@ -1,0 +1,43 @@
+//Colors
+
+@use 'globals';
+
+//Palette
+$day_bodyText: #212121;
+$day_dimmedText: #8C8C8C;
+$day_linkText: #545454;
+$day_invertedText: #FFFFFF;
+$day_HCText: #000000;
+
+$day_visualGrouping: #F3F2F1;
+$day_page: #FCFDFB; //#FDFCFB;
+
+$day_accent1: #5B8D3E; //#F27222;
+$day_success: #0AAE49;
+$day_error: #AE0A38;
+
+//CSS Variables
+:root {
+	--textColor-body: #{$day_bodyText};
+	--textColor-dimmed: #{$day_dimmedText};
+	--textColor-link: #{$day_linkText};
+	--textColor-inverted: #{$day_invertedText};
+	--textColor-high-contrast: #{$day_HCText};
+	
+	--color-visual-grouping: #{$day_visualGrouping};
+	--color-page: #{$day_page};
+	
+	--color-accent-1: #{$day_accent1};
+	--statusColor-success: #{$day_success};
+	--statusColor-error: #{$day_error};
+}
+
+//Shadows
+@mixin subtle-shadow {
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.07);
+}
+
+//Colorizers
+.accent {
+	color: var(--color-accent-1)
+}

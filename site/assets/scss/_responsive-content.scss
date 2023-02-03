@@ -1,0 +1,57 @@
+@use 'globals';
+
+//Responsive Content
+
+.mobile {
+	display: none;
+}
+.tablet {
+	display: none;
+}
+.desktop {
+	display: none;
+}
+
+@media (max-width: #{(globals.$break-point-tablet-)}) {
+	.mobile {
+		display: unset;
+	}
+}
+@media (min-width: #{globals.$break-point-tablet}) and (max-width: #{(globals.$break-point-desktop-)}) {
+	.tablet {
+		display: unset;
+	}
+}
+@media (min-width: #{globals.$break-point-desktop}) {
+	.desktop {
+		display: unset;
+	}
+}
+
+@mixin responsive-image { //This is so other, more specific classes can use @include for this feature
+	&.mobile {
+		display: none;
+	}
+	&.tablet {
+		display: none;
+	}
+	&.desktop {
+		display: none;
+	}
+	
+	@media (max-width: #{(globals.$break-point-tablet-)}) {
+		&.mobile {
+			display: block;
+		}
+	}
+	@media (min-width: #{globals.$break-point-tablet}) and (max-width: #{(globals.$break-point-desktop-)}) {
+		&.tablet {
+			display: block;
+		}
+	}
+	@media (min-width: #{globals.$break-point-desktop}) {
+		&.desktop {
+			display: block;
+		}
+	}
+}

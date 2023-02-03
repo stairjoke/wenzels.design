@@ -1,0 +1,84 @@
+@use 'globals';
+@use 'typography';
+@use 'responsive-content';
+
+//Images
+figure.image-frame {
+	position: relative;
+	
+	width: 100%;
+	aspect-ratio: 1;
+	
+	background-size: cover;
+	
+	border-radius: #{globals.$radius-S};
+	
+	margin: var(--space-full) 0 var(--space-line) 0;
+	&:first-child {
+		margin-top: 0;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+	padding: 0;
+	
+	
+	#projects & {
+		margin: 0 !important;
+	}
+	
+	&.contain {
+		aspect-ratio: unset;
+		
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+		
+		img {
+			display: block;
+			border-radius: #{globals.$radius-S};
+			width: 100%;
+			
+			@include responsive-content.responsive-image();
+		}
+	}
+	
+	&.video {
+		aspect-ratio: unset;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--column-gap);
+		box-sizing: border-box;
+		background-color: var(--color-visual-grouping);
+		
+		video {
+			
+		}
+	}
+	
+	+ p {
+		margin-top: 2em;
+	}
+	
+	figcaption {
+		@include typography.bodyText();
+		
+		position: absolute;
+		right: 8px;
+		bottom: 8px;
+		left: 8px;
+		
+		background-color: var(--textColor-body);
+		color: var(--textColor-inverted);
+		
+		padding: 8px;
+		
+		visibility: hidden;
+	}
+	&:hover, &:focus {
+		figcaption {
+			visibility: visible;
+		}
+	}
+}

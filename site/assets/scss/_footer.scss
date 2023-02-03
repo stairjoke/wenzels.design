@@ -1,0 +1,12 @@
+@use 'globals';
+
+//Footer
+footer {
+	margin-top: 4rem;
+	
+	@media (min-width: #{globals.$break-point-tablet}) {
+		margin-top: 6rem;
+		display: flex;
+		gap: 24px;
+	}
+}

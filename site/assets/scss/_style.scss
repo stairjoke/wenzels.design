@@ -1,0 +1,47 @@
+//Foundations
+@use 'helpers';
+@use 'globals';
+@use 'layout';
+@use 'colors';
+@use 'typography';
+
+@use 'header';
+@use 'footer';
+
+@use 'buttons';
+@use 'images';
+@use 'responsive-content';
+
+@use 'projects';
+
+//Global Margins
+:root {
+	--bodyMargin: 8px;
+	@media (min-width: #{globals.$break-point-XS-phone}) {
+		--bodyMargin: 16px;
+	}
+	
+	@media (min-width: #{globals.$break-point-phone}) {
+		--bodyMargin: 24px;
+	}
+	
+	@media (min-width: #{globals.$break-point-tablet}) {
+		--bodyMargin: 48px;
+	}
+}
+
+//Global Foundation
+body {
+	margin: var(--bodyMargin);
+	padding: 0;
+	background: var(--color-page);
+}
+.wrapped {
+	max-width: 1728px;
+	margin: 0 auto;
+}
+
+svg.icon {
+	width: 24px;
+	height: 24px;
+}
