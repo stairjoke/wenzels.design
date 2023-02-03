@@ -26,10 +26,8 @@ $locale = substr(
 echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 ?>">
 	<head>
-		<title></title>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="css/style.css" rel="stylesheet">
+		<?= css('site/assets/foundation.css') ?>
 	</head>
 	<body>
 		<?= $page->title() ?>
