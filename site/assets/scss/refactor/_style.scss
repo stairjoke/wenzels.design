@@ -20,11 +20,11 @@
 	@media (min-width: #{globals.$break-point-XS-phone}) {
 		--bodyMargin: 16px;
 	}
-	
+
 	@media (min-width: #{globals.$break-point-phone}) {
 		--bodyMargin: 24px;
 	}
-	
+
 	@media (min-width: #{globals.$break-point-tablet}) {
 		--bodyMargin: 48px;
 	}
@@ -39,9 +39,4 @@ body {
 .wrapped {
 	max-width: 1728px;
 	margin: 0 auto;
-}
-
-svg.icon {
-	width: 24px;
-	height: 24px;
 }
