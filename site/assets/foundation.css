@@ -1,3 +1,225 @@
+@charset "UTF-8";
+@import url("https://use.typekit.net/xyc8fjn.css");
+body {
+  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--textColor-body);
+}
 
+p {
+  margin: 0 0 1rem 0;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+a:link, a:active, a:visited {
+  text-decoration: underline;
+  color: var(--textColor-link, #f0f);
+}
+a:hover, a:focus {
+  text-decoration: underline;
+  color: var(--color-accent-1, #f0f);
+}
+
+em, strong {
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.literal {
+  font-style: italic;
+}
+
+h1 {
+  font-family: futura-pt, "Futura PT", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--textColor-high-contrast, #f0f);
+  font-size: 1.5rem;
+  line-height: 3rem;
+  margin: 0 0 1rem 0;
+}
+@media (min-width: 744px) {
+  h1 {
+    font-family: futura-pt, "Futura PT", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: var(--textColor-high-contrast, #f0f);
+  }
+}
+
+h2 {
+  font-family: futura-pt, "Futura PT", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--textColor-high-contrast, #f0f);
+  font-size: 4rem;
+  line-height: 6rem;
+  color: var(--textColor-dimmed, #f0f);
+  font-size: 2.5rem;
+  line-height: 3rem;
+  margin: 0 0 1rem 0;
+}
+@media (min-width: 744px) {
+  h2 {
+    font-family: futura-pt, "Futura PT", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 2rem;
+    line-height: 3rem;
+    color: var(--textColor-high-contrast, #f0f);
+    font-size: 4rem;
+    line-height: 6rem;
+    color: var(--textColor-dimmed, #f0f);
+    margin: 0 0 1rem 0;
+  }
+  h2.nude {
+    margin: 2rem 0 1rem 0;
+  }
+}
+h2.nude {
+  margin: 2rem 0 1rem 0;
+}
+
+h3 {
+  font-family: futura-pt, "Futura PT", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  margin: var(--space-full) 0 1rem 0;
+}
+@media (min-width: 744px) {
+  h3 {
+    font-family: futura-pt, "Futura PT", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+h3:first-child {
+  margin-top: 0;
+}
+
+h4 {
+  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--textColor-body);
+  font-weight: 300;
+  margin: 1.5rem 0 0 0;
+}
+
+ol, ul {
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 0.6rem;
+  font-weight: 300;
+}
+h3 + ol, h5 + ol, h3 + ul, h5 + ul {
+  margin: 1rem 0 0 0;
+}
+ol li, ul li {
+  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--textColor-body);
+  padding-left: 0.8rem;
+}
+
+ul {
+  list-style-type: "–";
+}
+ul ul {
+  list-style-type: "•";
+}
+
+p.teaser {
+  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--textColor-body);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 3rem;
+  font-size: 1.25rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 744px) {
+  p.teaser {
+    font-family: proxima-nova, "Proxima Nova", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--textColor-body);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 3rem;
+  }
+}
+.dim {
+  color: var(--textColor-dimmed, #f0f);
+}
+
+.mobile {
+  display: none;
+}
+
+.tablet {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+
+@media (max-width: 743px) {
+  .mobile {
+    display: unset;
+  }
+}
+@media (min-width: 744px) and (max-width: 1279px) {
+  .tablet {
+    display: unset;
+  }
+}
+@media (min-width: 1280px) {
+  .desktop {
+    display: unset;
+  }
+}
+svg.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
 
 /*# sourceMappingURL=foundation.css.map */

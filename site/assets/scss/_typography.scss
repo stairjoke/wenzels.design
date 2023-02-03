@@ -1,230 +1,233 @@
-//Typography
+@use 'scss-variables';
 
-@use 'globals';
+// Typography foundation
 
 //Adobe Fonts
 @import url("https://use.typekit.net/xyc8fjn.css");
 
 //Text Styles
 @mixin bodyText {
-	font-family: proxima-nova, 'Proxima Nova', sans-serif;
-	font-weight: 500;
-	font-style: normal;
-	
-	font-size: 1rem;
-	line-height: 1.5rem;
-	color: var(--textColor-body);
-}
+  font-family: proxima-nova, 'Proxima Nova', sans-serif;
+  font-weight: 500;
+  font-style: normal;
 
-@mixin _bodyEmphasis {
-	font-weight: 700;
-	font-style: normal;
-	text-decoration: none;
-}
-
-@mixin _bodyUnderline {
-	text-decoration: underline;
-}
-
-@mixin _bodyLiteral {
-	/* A literal is a word mark, or untranslated name of an object. Inline text. */
-	font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--textColor-body);
 }
 
 body {
-	@include bodyText();
+  @include bodyText();
 }
 
 p {
-	margin: 0 0 1rem 0;
-	
-	&:last-child {
-		margin-bottom: 0;
-	}
-}
+  margin: 0 0 1rem 0;
 
-.literal {
-	@include _bodyLiteral();
-}
-
-em, strong {
-	@include _bodyEmphasis();
-}
-
-.underline {
-	@include _bodyUnderline();
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 a {
-	&:link, &:active, &:visited {
-		text-decoration: underline;
-		color: var(--textColor-link);
-	}
-	
-	&:hover, &:focus {
-		text-decoration: underline;
-		color: var(--color-accent-1);
-	}
+  &:link, &:active, &:visited {
+    text-decoration: underline;
+    color: var(--textColor-link, #f0f);
+  }
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: var(--color-accent-1, #f0f);
+  }
 }
 
-@mixin _listHead {
-	font-weight: 300;
+@mixin _bodyEmphasis {
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
 }
 
-ol, ul {
-	margin: 0 0 1rem 0;
-	padding: 0 0 0 0.6rem;
-	
-	h3 + &, h5 + & {
-		margin: 1rem 0 0 0;
-	}
-	@include _listHead();
-	li {
-		@include bodyText();
-		padding-left: 0.8rem;
-	}
+em, strong {
+  @include _bodyEmphasis();
 }
 
-ul {
-	list-style-type: "–";
-	
-	ul {
-		list-style-type: '\2022';
-	}
+@mixin _bodyUnderline {
+  text-decoration: underline;
 }
 
+.underline {
+  @include _bodyUnderline();
+}
+
+// A literal is a word mark, or untranslated name of an object. Inline text.
+@mixin _bodyLiteral {
+  font-style: italic;
+}
+
+.literal {
+  @include _bodyLiteral();
+}
+
+// ---Headline Styles---
+//h1
 @mixin headline-font {
-	font-family: futura-pt, "Futura PT", sans-serif;
-	font-weight: 600;
-	font-style: normal;
-	text-transform: uppercase;
+  font-family: futura-pt, "Futura PT", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
 }
 
 @mixin L-headline {
-	@include headline-font();
-	
-	font-size: 2rem;
-	line-height: 3rem;
-	color: var(--textColor-high-contrast);
+  @include headline-font();
+
+  font-size: 2rem;
+  line-height: 3rem;
+  color: var(--textColor-high-contrast, #f0f);
 }
 
 @mixin S-headline {
-	@include L-headline();
-	
-	font-size: 1.5rem;
-	line-height: 3rem;
+  @include L-headline();
+
+  font-size: 1.5rem;
+  line-height: 3rem;
 }
 
 h1 {
-	@include S-headline();
-	
-	margin: 0 0 1rem 0;
+  @include S-headline();
+
+  margin: 0 0 1rem 0;
+
+  @media (min-width: #{scss-variables.$break-point-tablet}) {
+    @include L-headline();
+  }
 }
 
-@media (min-width: #{globals.$break-point-tablet}) {
-	h1 {
-		@include L-headline();
-	}
-}
-
+//h2
 @mixin L-sectionTitle {
-	@include L-headline();
-	
-	font-size: 4rem;
-	line-height: 6rem;
-	
-	color: var(--textColor-dimmed);
+  @include L-headline();
+
+  font-size: 4rem;
+  line-height: 6rem;
+
+  color: var(--textColor-dimmed, #f0f);
 }
 
 @mixin S-sectionTitle {
-	@include L-sectionTitle();
-	
-	font-size: 40px;
-	line-height: 48px;
+  @include L-sectionTitle();
+
+  font-size: 2.5rem;
+  line-height: 3rem;
 }
 
 h2 {
-	@include S-sectionTitle();
-	margin: 0 0 var(--space-line) 0;
-	
-	&.nude {
-		margin: var(--space-full) 0 var(--space-line) 0;
-	}
+  @include S-sectionTitle();
+  margin: 0 0 1rem 0;
+
+  @media (min-width: #{scss-variables.$break-point-tablet}) {
+    @include L-sectionTitle();
+    margin: 0 0 1rem 0;
+
+    &.nude {
+      margin: 2rem 0 1rem 0;
+    }
+  }
+
+  &.nude {
+    margin: 2rem 0 1rem 0;
+  }
 }
 
-@media (min-width: #{globals.$break-point-tablet}) {
-	h2 {
-		@include L-sectionTitle();
-		margin: 0 0 var(--space-line) 0;
-		
-		&.nude {
-			margin: var(--space-full) 0 var(--space-line) 0;
-		}
-	}
-}
-
+//h3
 @mixin _L-H3 {
-	@include headline-font();
-	line-height: 2rem;
-	font-size: 1.5rem;
+  @include headline-font();
+  line-height: 2rem;
+  font-size: 1.5rem;
 }
 
 @mixin _S-H3 {
-	@include headline-font();
-	font-size: 1.25rem;
-	line-height: 1.5rem;
+  @include headline-font();
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
 
 h3 {
-	@include _S-H3();
-	
-	margin: var(--space-full) 0 1rem 0;
-	
-	@media (min-width: #{globals.$break-point-tablet}) {
-		@include _L-H3();
-	}
-	
-	&:first-child {
-		margin-top: 0;
-	}
+  @include _S-H3();
+
+  margin: var(--space-full) 0 1rem 0;
+
+  @media (min-width: #{scss-variables.$break-point-tablet}) {
+    @include _L-H3();
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
+//h4
 @mixin _H4 {
-	@include bodyText();
-	font-weight: 300;
+  @include bodyText();
+  font-weight: 300;
 }
 
 h4 {
-	@include _H4();
-	
-	margin: 1.5rem 0 0 0;
+  @include _H4();
+
+  margin: 1.5rem 0 0 0;
 }
 
+//Lists
+@mixin _listHead {
+  font-weight: 300;
+}
+
+ol, ul {
+  margin: 0 0 1rem 0;
+  padding: 0 0 0 0.6rem;
+
+  h3 + &, h5 + & {
+    margin: 1rem 0 0 0;
+  }
+  @include _listHead();
+  li {
+    @include bodyText();
+    padding-left: 0.8rem;
+  }
+}
+
+ul {
+  list-style-type: "–";
+
+  ul {
+    list-style-type: '\2022';
+  }
+}
+
+//Misc
 @mixin L-articleTeaser {
-	@include bodyText();
-	
-	font-weight: 300;
-	font-size: 32px;
-	line-height: 48px;
+  @include bodyText();
+
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 3rem;
 }
 
 @mixin S-articleTeaser {
-	@include L-articleTeaser();
-	
-	font-size: 20px;
-	line-height: 32px;
+  @include L-articleTeaser();
+
+  font-size: 1.25rem;
+  line-height: 2rem;
 }
 
 p.teaser {
-	@include S-articleTeaser();
+  @include S-articleTeaser();
 }
 
-@media (min-width: #{globals.$break-point-tablet}) {
-	p.teaser {
-		@include L-articleTeaser();
-	}
+@media (min-width: #{scss-variables.$break-point-tablet}) {
+  p.teaser {
+    @include L-articleTeaser();
+  }
 }
 
 .dim {
-	color: var(--textColor-dimmed);
+  color: var(--textColor-dimmed, #f0f);
 }

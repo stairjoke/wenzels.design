@@ -1,0 +1,29 @@
+@use 'scss-variables';
+
+// Responsively visible content
+
+.mobile {
+  display: none;
+}
+.tablet {
+  display: none;
+}
+.desktop {
+  display: none;
+}
+
+@media (max-width: #{(scss-variables.$break-point-tablet-)}) {
+  .mobile {
+    display: unset;
+  }
+}
+@media (min-width: #{scss-variables.$break-point-tablet}) and (max-width: #{(scss-variables.$break-point-desktop-)}) {
+  .tablet {
+    display: unset;
+  }
+}
+@media (min-width: #{scss-variables.$break-point-desktop}) {
+  .desktop {
+    display: unset;
+  }
+}
