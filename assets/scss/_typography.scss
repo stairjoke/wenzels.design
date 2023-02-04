@@ -6,18 +6,18 @@
 @import url("https://use.typekit.net/xyc8fjn.css");
 
 //Text Styles
-@mixin bodyText {
+@mixin body-text {
   font-family: proxima-nova, 'Proxima Nova', sans-serif;
   font-weight: 500;
   font-style: normal;
 
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: 1.5rem; // !!! a[role=button] uses same value for height, update if changed!
   color: var(--text-color-body);
 }
 
 body {
-  @include bodyText();
+  @include body-text();
 }
 
 p {
@@ -40,31 +40,31 @@ a {
   }
 }
 
-@mixin _bodyEmphasis {
+@mixin _body-emphasis {
   font-weight: 700;
   font-style: normal;
   text-decoration: none;
 }
 
 em, strong {
-  @include _bodyEmphasis();
+  @include _body-emphasis();
 }
 
-@mixin _bodyUnderline {
+@mixin _body-underline {
   text-decoration: underline;
 }
 
 .underline {
-  @include _bodyUnderline();
+  @include _body-underline();
 }
 
 // A literal is a word mark, or untranslated name of an object. Inline text.
-@mixin _bodyLiteral {
+@mixin _body-literal {
   font-style: italic;
 }
 
 .literal {
-  @include _bodyLiteral();
+  @include _body-literal();
 }
 
 // ---Headline Styles---
@@ -102,7 +102,7 @@ h1 {
 }
 
 //h2
-@mixin L-sectionTitle {
+@mixin L-section-title {
   @include L-headline();
 
   font-size: 4rem;
@@ -111,19 +111,19 @@ h1 {
   color: var(--text-color-dimmed, #f0f);
 }
 
-@mixin S-sectionTitle {
-  @include L-sectionTitle();
+@mixin S-section-title {
+  @include L-section-title();
 
   font-size: 2.5rem;
   line-height: 3rem;
 }
 
 h2 {
-  @include S-sectionTitle();
+  @include S-section-title();
   margin: 0 0 1rem 0;
 
   @media (min-width: #{scss-variables.$break-point-tablet}) {
-    @include L-sectionTitle();
+    @include L-section-title();
     margin: 0 0 1rem 0;
 
     &.nude {
@@ -165,7 +165,7 @@ h3 {
 
 //h4
 @mixin _H4 {
-  @include bodyText();
+  @include body-text();
   font-weight: 300;
 }
 
@@ -176,7 +176,7 @@ h4 {
 }
 
 //Lists
-@mixin _listHead {
+@mixin _list-head {
   font-weight: 300;
 }
 
@@ -187,9 +187,9 @@ ol, ul {
   h3 + &, h5 + & {
     margin: 1rem 0 0 0;
   }
-  @include _listHead();
+  @include _list-head();
   li {
-    @include bodyText();
+    @include body-text();
     padding-left: 0.8rem;
   }
 }
@@ -203,28 +203,28 @@ ul {
 }
 
 //Misc
-@mixin L-articleTeaser {
-  @include bodyText();
+@mixin L-article-teaser {
+  @include body-text();
 
   font-weight: 300;
   font-size: 1rem;
   line-height: 3rem;
 }
 
-@mixin S-articleTeaser {
-  @include L-articleTeaser();
+@mixin S-article-teaser {
+  @include L-article-teaser();
 
   font-size: 1.25rem;
   line-height: 2rem;
 }
 
 p.teaser {
-  @include S-articleTeaser();
+  @include S-article-teaser();
 }
 
 @media (min-width: #{scss-variables.$break-point-tablet}) {
   p.teaser {
-    @include L-articleTeaser();
+    @include L-article-teaser();
   }
 }
 
