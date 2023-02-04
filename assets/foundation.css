@@ -271,24 +271,24 @@ header nav .menu {
   align-items: center;
   gap: var(--grid-gap-mobile);
 }
-header nav input[type=checkbox] {
+header nav input[type=checkbox]#nav-toggle {
   visibility: hidden;
   position: absolute;
   left: -5000px;
 }
-header nav input[type=checkbox] + label #close {
+header nav input[type=checkbox]#nav-toggle + label #close {
   display: none;
 }
-header nav input[type=checkbox]:checked ~ label {
+header nav input[type=checkbox]#nav-toggle:checked ~ label {
   position: fixed;
 }
-header nav input[type=checkbox]:checked ~ .triggered #close {
+header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #close {
   display: unset;
 }
-header nav input[type=checkbox]:checked ~ .triggered #menu {
+header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #menu {
   display: none;
 }
-header nav input[type=checkbox]:checked ~ .menu.triggered {
+header nav input[type=checkbox]#nav-toggle:checked ~ .menu.triggered-by-nav-toggle {
   display: flex;
   margin: 0;
   padding: var(--body-margin);

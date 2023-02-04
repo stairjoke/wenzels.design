@@ -11,7 +11,7 @@ header {
 		right: var(--body-margin);
 		z-index: 101;
 	  }
-	
+
 	nav {
 		/*
 		The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
@@ -23,37 +23,37 @@ header {
 			top: 0;
 			right: 0;
 			left: 0;
-			
+
 			background-color: var(--color-page, #f0f);
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			gap: var(--grid-gap-mobile);
 		}
-		
-		input[type=checkbox] {
+
+		input[type=checkbox]#nav-toggle {
 			visibility: hidden;
 			position: absolute;
 			left: -5000px;
-			
+
 			& + label #close {
 				display: none;
 			}
-			
+
 			&:checked {
 				& ~ label {
 					position: fixed;
 				}
-				& ~ .triggered #close {
+				& ~ .triggered-by-nav-toggle #close {
 					display: unset;
 				}
-				
-				& ~ .triggered #menu {
+
+				& ~ .triggered-by-nav-toggle #menu {
 					display: none;
 				}
-				& ~ .menu.triggered {
+				& ~ .menu.triggered-by-nav-toggle {
 					display: flex;
-					
+
 					margin: 0;
 					padding: var(--body-margin);
 					min-height: 100vh;
@@ -61,24 +61,24 @@ header {
 				}
 			}
 		}
-		
+
 		ul {
 			list-style: none;
 			padding: 0;
 		}
-		
+
 		a {
 			@media (max-width: #{(scss-variables.$break-point-tablet-)}) {
 				&:not(*[role=button]) {
 					@include typography.S-headline;
 				}
 			}
-			
+
 			&:link, &:active, &:visited {
 				text-decoration: none;
 				color: var(--text-color-link, #f0f);
 			}
-			
+
 			&:hover, &:focus {
 				text-decoration: underline;
 				color: var(--text-color-body, #f0f);
@@ -87,16 +87,16 @@ header {
 				text-decoration: underline;
 			}
 		}
-		
+
 		@media (min-width: #{scss-variables.$break-point-tablet}) {
 			input, label {
 				display: none;
 			}
-			
+
 			.menu {
 				display: flex;
 				position: unset;
-				
+
 				flex-direction: row;
 				justify-content: flex-start;
 				align-items: flex-start;
@@ -104,7 +104,7 @@ header {
 				padding: 16px 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
 				margin: 0;
 			}
-			
+
 			a {
 				padding: 4px 8px;
 			}

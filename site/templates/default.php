@@ -70,10 +70,10 @@ echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 			?>
 			<nav>
 				<!--
-						The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
+						The input[type=checkbox]#nav-toggle triggers all .triggered-by-nav-toggle nodes to change the menu icon and show/hide the menu
 					-->
 				<input type="checkbox" value="false" id="nav-toggle">
-				<label for="nav-toggle" class="triggered">
+				<label for="nav-toggle" class="triggered-by-nav-toggle">
 					<svg class="icon" id="menu">
 						<use href="/assets/iconSprite.svg#menu"></use>
 					</svg>
@@ -82,7 +82,7 @@ echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 					</svg>
 				</label>
 		
-				<ul class="menu triggered">
+				<ul class="menu triggered-by-nav-toggle">
 					<li><a href="/" class="current">Projekte</a></li>
 					<li><a href="/cv/">Vita</a></li>
 					<li><a href="mailto:hello@wenzels.design?subject=Eierlegende Wollmilchsau&body=Hallo Wenzel!" role="button">Kontakt</a></li>
