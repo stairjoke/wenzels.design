@@ -19,7 +19,7 @@ $locale = substr(
 		'/^(http(s)?:\/\/)[A-z0-9@\.:ßàÁâãóôþüúðæåïçèõöÿýòäœêëìíøùîûñé]+/',
 		'',
 		$page->url()),
-	1, 6);
+	1, 5);
 
 // Echo the locale into the lang-attribute if there was one,
 // otherwise use en-US
