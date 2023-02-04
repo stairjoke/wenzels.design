@@ -81,7 +81,7 @@ header {
 
 			&:hover, &:focus {
 				text-decoration: underline;
-				color: var(--text-color-body, #f0f);
+				color: var(--text-color-body-text, #f0f);
 			}
 			&.current {
 				text-decoration: underline;
@@ -105,12 +105,8 @@ header {
 				margin: 0;
 			}
 
-			a {
-				padding: 0.25rem 0.5rem;
-			}
-			a[role=button] {
-        //Buttons have a 1px border
-				padding: calc(0.25rem - 2px) calc(0.5rem - 2px);
+			a, a[role=button] {
+				padding: calc(0.25rem - 1px) calc(0.5rem - 1px);
 			}
 		}
 	}

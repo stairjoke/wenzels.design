@@ -90,15 +90,17 @@ echo ($locale);
 		
 				<ul class="menu triggered-by-nav-toggle">
 					<?php
-						echo("<li><a href='". $navBase->url() ."'>". $navBase->nav_title() ."</a></li>");
+						echo("<li><a href='". $navBase->url() ."' class='button nav-button'>". $navBase->nav_title() ."</a></li>");
 						foreach($navBase->children() as $navItem){
-							echo("<li><a href='". $navItem->url() ."'>". $navItem->title() ."</a></li>");
+							echo("<li><a href='". $navItem->url() ."' class='button nav-button'>". $navItem->title() ."</a></li>");
 						}
 					?>
-					<li><a href="<?= $navBase->contact_link() ?>" role="button"><?= $navBase->contact_label() ?></a></li>
+					<li><a href="<?= $navBase->contact_link() ?>" role="button" class="nav-button CTA"><?= $navBase->contact_label() ?></a></li>
 				</ul>
 			</nav>
 		</header>
+		<button class="CTA">button</button><br>
+		<button>button</button><br>
 		<?= $page->title() ?><br>
 		<?= $locale ?>
 	</body>

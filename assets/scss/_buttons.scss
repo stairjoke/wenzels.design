@@ -1,0 +1,70 @@
+@use 'typography';
+
+//Buttons
+
+button, .button, a[role=button] {
+  display: block;
+  @include typography.body-text();
+  padding: calc(0.75rem - 1px) calc(1rem - 1px);
+	border: solid 1px transparent;
+  border-radius: 2px;
+
+  transition-property: box-shadow, transform;
+  transition-duration: 240ms;
+  transition-timing-function: ease-out;
+
+  background-color: var(--color-visual-grouping, #f0f);
+  border: solid 1px var(--text-color-body-text, #f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f);
+
+  text-decoration: none;
+  color: var(--text-color-body-text, #f0f);
+  &:link, &:active, &:visited {
+    text-decoration: none;
+    color: var(--text-color-body-text, #f0f);
+  }
+  &:hover, &:focus {
+    transition-duration: 120ms;
+    transition-timing-function: cubic-bezier(1, 1.5, .75, .87);
+
+    transform: scale(1.05);
+    box-shadow: 0.5rem 0.5rem 0 0 var(--color-shadow, #f0f);
+
+    text-decoration: none;
+    color: var(--text-color-body-text, #f0f);
+  }
+
+  &.nav-button {
+    display: inline-block;
+    background-color: var(--color-page, #f0f);
+    border: none;
+    padding: 0.25rem 0.5rem;
+    margin-top: -0.25rem;
+
+    &.current {
+      background-color: var(--color-visual-grouping, #f0f);
+    }
+  }
+
+  &.CTA {
+    background-color: var(--color-accent, #f0f);
+    color: var(--text-color-inverted);
+    border: solid 1px var(--color-accent, #f0f);
+
+    &:link, &:active, &:visited {
+      text-decoration: none;
+      color: var(--text-color-inverted, #f0f);
+    }
+
+    &:hover, &:focus {
+      color: var(--text-color-inverted, #f0f);
+      text-decoration: none;
+    }
+  }
+
+
+	aside & {
+		display: block;
+		text-align: center;
+	}
+}
