@@ -23,7 +23,8 @@ $locale = substr(
 
 // Echo the locale into the lang-attribute if there was one,
 // otherwise use en-US
-echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
+$locale = ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
+echo ($locale);
 ?>">
 	<head>
 		<meta charset="UTF-8">
@@ -83,12 +84,18 @@ echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 				</label>
 		
 				<ul class="menu triggered-by-nav-toggle">
-					<li><a href="/" class="current">Projekte</a></li>
-					<li><a href="/cv/">Vita</a></li>
+					<?php
+						$navBase = $kirby->page($locale);
+						echo("<li><a href='". $navBase->url() ."'>". $navBase->nav_title() ."</a></li>");
+						foreach($navBase->children() as $navItem){
+							echo("<li><a href='". $navItem->url() ."'>". $navItem->title() ."</a></li>");
+						}
+					?>
 					<li><a href="mailto:hello@wenzels.design?subject=Eierlegende Wollmilchsau&body=Hallo Wenzel!" role="button">Kontakt</a></li>
 				</ul>
 			</nav>
 		</header>
-		<?= $page->title() ?>
+		<?= $page->title() ?><br>
+		<?= $locale ?>
 	</body>
 </html>
