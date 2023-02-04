@@ -95,7 +95,7 @@ echo ($locale);
 							echo("<li><a href='". $navItem->url() ."'>". $navItem->title() ."</a></li>");
 						}
 					?>
-					<li><a href="" role="button">Kontakt</a></li>
+					<li><a href="<?= $navBase->contact_link() ?>" role="button"><?= $navBase->contact_label() ?></a></li>
 				</ul>
 			</nav>
 		</header>
