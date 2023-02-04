@@ -38,16 +38,36 @@ echo ((preg_match('/[a-z]{2}-[A-Z]{2}/', $locale))?$locale:'en-US');
 	</head>
 	<body>
 		<header>
-			<h1 class="desktop"><span class="accent">Wenzel&nbsp;Massag</span>&nbsp;&mdash; <nobr>UX-, UI-,</nobr>
-				<nobr>Web-Designer,</nobr> Technologist, Eierlegende Wollmilchsau.
-			</h1>
-			<h1 class="tablet"><span class="accent">Wenzel&nbsp;Massag</span>&nbsp;&mdash; <nobr>UX-, UI-,</nobr>
-				<nobr>Web-Designer,</nobr> Technologist.
-			</h1>
-			<h1 class="mobile"><span class="accent">Wenzel&nbsp;Massag</span>&nbsp;&mdash; <nobr>UX-, UI-,</nobr>
-				<nobr>Web-Design & Code</nobr>
-			</h1>
-			
+			<?php
+				// Display different site-titles depending on availability
+				$hasTabletTitle = $site->title_tablet()->exists();
+				$hasMobileTitle = $site->title_mobile()->exists();
+
+				// If there is only one title display it to all viewport sizes
+				if(!$hasTabletTitle && !$hasMobileTitle) {
+					echo("<h1>".$site->title()."</h1>");
+
+				// If there is n additional mobile but no tablet title, use the
+				// desktop title for desktop and tablet, but mobile for mobile
+				}elseif(!$hasTabletTitle && $hasMobileTitle){
+					echo("<h1 class='desktop tablet'>".$site->title()."</h1>");
+					echo("<h1 class=mobile>".$site->title_mobile()."</h1>");
+
+				// If there is an additional title for tablet, but no mobile-
+				// title, use the desktop-title for desktop, and the tablet-
+				// title for tablet and mobile
+				}elseif($hasTabletTitle && !$hasMobileTitle) {
+					echo("<h1 class='desktop'>".$site->title()."</h1>");
+					echo("<h1 class='tablet mobile'>".$site->title_tablet()."</h1>");
+
+				// If there is a desktop-, tablet-, and mobile-title, use them
+				// respectively
+				}elseif($hasTabletTitle && $hasMobileTitle){
+					echo("<h1 class=desktop>".$site->title()."</h1>");
+					echo("<h1 class=tablet>".$site->title_tablet()."</h1>");
+					echo("<h1 class=mobile>".$site->title_mobile()."</h1>");
+				}
+			?>
 			<nav>
 				<!--
 						The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
