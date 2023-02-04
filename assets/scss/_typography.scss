@@ -13,7 +13,7 @@
 
   font-size: 1rem;
   line-height: 1.5rem; // !!! a[role=button] uses same value for height, update if changed!
-  color: var(--text-color-body);
+  color: var(--text-color-body-text, #f0f);
 }
 
 body {
