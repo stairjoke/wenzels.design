@@ -100,16 +100,17 @@ header {
 				flex-direction: row;
 				justify-content: flex-start;
 				align-items: flex-start;
-				gap: 24px;
-				padding: 16px 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
+				gap: 0.5rem;
+				padding: 1rem 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
 				margin: 0;
 			}
 
 			a {
-				padding: 4px 8px;
+				padding: 0.25rem 0.5rem;
 			}
 			a[role=button] {
-				padding: 2px 6px;
+        //Buttons have a 1px border
+				padding: calc(0.25rem - 2px) calc(0.5rem - 2px);
 			}
 		}
 	}
