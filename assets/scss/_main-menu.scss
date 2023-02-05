@@ -4,6 +4,11 @@
 // Main Menu
 
 header {
+  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap-mobile));
+  @media (min-width: #{scss-variables.$break-point-desktop-S-}) {
+    max-width: unset;
+  }
+
 	label {
 		// This label contains an SVG Icon
 		position: absolute;
@@ -14,8 +19,9 @@ header {
 
 	nav {
 		/*
-		The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
+		The input[type=checkbox]#nav-toggle triggers all .triggered nodes to change the menu icon and show/hide the menu
 		*/
+
 		.menu {
 			display: none;
 			position: fixed;
@@ -68,9 +74,10 @@ header {
 		}
 
 		a {
-			@media (max-width: #{(scss-variables.$break-point-tablet-)}) {
-				&:not(*[role=button]) {
-					@include typography.S-headline;
+			@media (max-width: #{(scss-variables.$break-point-desktop-S- -1px)}) {
+        @include typography.S-headline;
+				.CTA {
+					color: var(--text-color-inverted);
 				}
 			}
 
@@ -88,7 +95,7 @@ header {
 			}
 		}
 
-		@media (min-width: #{scss-variables.$break-point-tablet}) {
+		@media (min-width: #{scss-variables.$break-point-desktop-S-}) {
 			input, label {
 				display: none;
 			}
@@ -97,11 +104,15 @@ header {
 				display: flex;
 				position: unset;
 
+        height: 100%;
+        flex-wrap: nowrap;
+
 				flex-direction: row;
-				justify-content: flex-start;
-				align-items: flex-start;
+				justify-content: flex-end;
+				align-items: baseline;
 				gap: 0.5rem;
-				padding: 1rem 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
+				// padding: 1rem 0 0 0; //(H1 Line height / 2) - nav-item-height = Baseline alignment for nav text
+        padding: 0;
 				margin: 0;
 			}
 
