@@ -251,7 +251,7 @@ button, .button, a[role=button] {
   transition-timing-function: ease-out;
   background-color: var(--color-visual-grouping, #f0f);
   border: solid 1px var(--text-color-body-text, #f0f);
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
   text-decoration: none;
   color: var(--text-color-body-text, #f0f);
 }
@@ -263,9 +263,13 @@ button:hover, button:focus, .button:hover, .button:focus, a[role=button]:hover, 
   transition-duration: 120ms;
   transition-timing-function: cubic-bezier(1, 1.5, 0.75, 0.87);
   transform: scale(1.05);
-  box-shadow: 0.5rem 0.5rem 0 0 var(--color-shadow, #f0f);
+  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
   text-decoration: none;
   color: var(--text-color-body-text, #f0f);
+}
+button:active, .button:active, a[role=button]:active {
+  transition-duration: 50ms;
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
 }
 button.nav-button, .button.nav-button, a[role=button].nav-button {
   display: inline-block;

@@ -15,7 +15,9 @@ button, .button, a[role=button] {
 
   background-color: var(--color-visual-grouping, #f0f);
   border: solid 1px var(--text-color-body-text, #f0f);
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f);
+  box-shadow:
+    0 0 0 0 var(--color-shadow, #f0f),
+    inset 0 0 0 0 var(--color-shadow, f0f);
 
   text-decoration: none;
   color: var(--text-color-body-text, #f0f);
@@ -28,10 +30,19 @@ button, .button, a[role=button] {
     transition-timing-function: cubic-bezier(1, 1.5, .75, .87);
 
     transform: scale(1.05);
-    box-shadow: 0.5rem 0.5rem 0 0 var(--color-shadow, #f0f);
+    box-shadow:
+      0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f),
+      inset 0 0 0 0 var(--color-shadow, f0f);;
 
     text-decoration: none;
     color: var(--text-color-body-text, #f0f);
+  }
+  &:active {
+    transition-duration: 50ms;
+
+    box-shadow:
+      0 0 0 0 var(--color-shadow, #f0f),
+      inset .125rem .125rem .125rem 0 var(--color-shadow, f0f);
   }
 
   &.nav-button {
