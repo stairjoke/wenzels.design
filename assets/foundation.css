@@ -301,17 +301,25 @@ aside button, aside .button, aside a[role=button] {
 
 header {
   display: flex;
-  gap: var(--grid-gap-mobile);
+  gap: var(--grid-gap-mobile, 500px);
 }
 @media (min-width: 1280px) {
   header {
-    gap: var(--grid-gap-desktop);
+    gap: var(--grid-gap-desktop, 500px);
   }
 }
 header h1 {
   flex-grow: 1;
 }
 
+header {
+  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap-mobile));
+}
+@media (min-width: 1023px) {
+  header {
+    max-width: unset;
+  }
+}
 header label {
   position: absolute;
   top: calc(var(--body-margin) + 0.28125rem);
@@ -320,7 +328,7 @@ header label {
 }
 header nav {
   /*
-  The input[type=checkbox] triggers all .triggered nodes to change the menu icon and show/hide the menu
+  The input[type=checkbox]#nav-toggle triggers all .triggered nodes to change the menu icon and show/hide the menu
   */
 }
 header nav .menu {
@@ -364,8 +372,8 @@ header nav ul {
   list-style: none;
   padding: 0;
 }
-@media (max-width: 743px) {
-  header nav a:not(*[role=button]) {
+@media (max-width: 1023px -1px) {
+  header nav a {
     font-family: futura-pt, "Futura PT", sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -375,6 +383,9 @@ header nav ul {
     color: var(--text-color-high-contrast, #f0f);
     font-size: 1.5rem;
     line-height: 3rem;
+  }
+  header nav a .CTA {
+    color: var(--text-color-inverted);
   }
 }
 header nav a:link, header nav a:active, header nav a:visited {
@@ -388,18 +399,20 @@ header nav a:hover, header nav a:focus {
 header nav a.current {
   text-decoration: underline;
 }
-@media (min-width: 744px) {
+@media (min-width: 1023px) {
   header nav input, header nav label {
     display: none;
   }
   header nav .menu {
     display: flex;
     position: unset;
+    height: 100%;
+    flex-wrap: nowrap;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: baseline;
     gap: 0.5rem;
-    padding: 1rem 0 0 0;
+    padding: 0;
     margin: 0;
   }
   header nav a, header nav a[role=button] {
@@ -419,7 +432,7 @@ header nav a.current {
 }
 @media (min-width: 390px) {
   :root {
-    --body-margin: 1.5;
+    --body-margin: 1.5rem;
   }
 }
 @media (min-width: 744px) {
@@ -437,6 +450,7 @@ body {
 svg.icon {
   width: 1.5rem;
   height: 1.5rem;
+  display: block;
 }
 
 /*# sourceMappingURL=foundation.css.map */

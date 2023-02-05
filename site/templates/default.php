@@ -7,7 +7,6 @@
 <?= snippet('HTMLhead') ?>
 	<body>
 	<?= snippet('page-header') ?>		
-		<button class="CTA">button</button><br>
-		<button>button</button><br>
+		
 	</body>
 </html>
