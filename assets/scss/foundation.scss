@@ -19,7 +19,7 @@
   }
 
   @media (min-width: #{scss-variables.$break-point-phone}) {
-    --body-margin: 1.5;
+    --body-margin: 1.5rem;
   }
 
   @media (min-width: #{scss-variables.$break-point-tablet}) {
@@ -40,4 +40,5 @@ body {
 svg.icon {
 	width: 1.5rem;
 	height: 1.5rem;
+  display: block;
 }
