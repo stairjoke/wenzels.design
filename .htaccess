@@ -44,28 +44,6 @@ RewriteRule ^(.*) index.php [L]
 RewriteCond %{SERVER_PORT} !^443$
 RewriteRule (.*) https://%{HTTP_HOST}/$1 [R=301]
 
-# ----------
-# https://gist.github.com/stairjoke/11dd0965ce8b8febd07d146bbf659c6d
-# Language Test: German
-## Set as a condition: The URI may not start with something like "/aa-AA"
-RewriteCond %{REQUEST_URI} !^(\/[a-z]{2}-[A-Z]{2})
-
-# Condition: The User Agent set "HTTP:Accept-Language" starting with "de"
-RewriteCond %{HTTP:Accept-Language} ^de [NC]
-
-# If both conditions are true, redirect the request to /de-DE/[path]
-RewriteRule (.*) /de-DE/$1 [R=302,L]
-# ----------
-
-# ----------
-# Redirect to English per default
-## Set as a condition: The URI may not start with something like "/aa-AA"
-RewriteCond %{REQUEST_URI} !^(\/[a-z]{2}-[A-Z]{2})
-
-# If the condition is true, redirect the request to /de-DE/[path]
-RewriteRule (.*) /en-US/$1 [R=302,L]
-# ----------
-
 </IfModule>
 
 # pass the Authorization header to PHP

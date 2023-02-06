@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= get_locale_from_url($page->url()) ?>">
+<html lang="de-DE">
 	<head>
 		<meta charset="UTF-8">
 		
