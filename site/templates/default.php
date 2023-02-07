@@ -1,12 +1,6 @@
-<!--
-- Header
-- Default page — use Atomic Design
-- Footer snippet
--->
-
 <?= snippet('HTMLhead') ?>
 	<body>
-	<?= snippet('page-header') ?>		
-		
+		<?= snippet('page-header') ?>		
+		<?= $page->main_content()->toBlocks() ?>
 	</body>
 </html>
