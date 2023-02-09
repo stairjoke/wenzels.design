@@ -4,11 +4,7 @@
 
 header {
   display: flex;
-  gap: var(--grid-gap-mobile, 500px);
-
-  @media (min-width: #{scss-variables.$break-point-desktop}) {
-    gap: var(--grid-gap-desktop, 500px);
-  }
+  gap: var(--grid-gap, 500px);
 
   h1 {
     flex-grow: 1;
