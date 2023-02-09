@@ -4,7 +4,7 @@
 // Main Menu
 
 header {
-  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap-mobile));
+  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap));
   @media (min-width: #{scss-variables.$break-point-desktop-S-}) {
     max-width: unset;
   }
