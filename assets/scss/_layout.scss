@@ -1,8 +1,8 @@
 @use 'scss-variables';
 @use 'typography';
 
-// Layout definitions for <main>
-main {
+// Layout definitions for <main class=default>
+main.default {
   // The desktop design was tailored to 1728px wide (16" MacBook Pro), it had
   // 12 columns with a 48px (3rem) gutter (16px/1rem on mobile), the central
   // six are used to anything that is not an illustration. The central six
