@@ -84,7 +84,7 @@ em, strong {
   @include L-headline();
 
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 
 h1 {
@@ -117,6 +117,9 @@ h1 {
 h2 {
   @include S-section-title();
   margin: var(--spacer-full, 500px) 0 var(--spacer-line-break, 500px) 0;
+  &:first-child {
+    margin-bottom: var(--spacer-full);
+  }
 
   @media (min-width: #{scss-variables.$break-point-tablet}) {
     @include L-section-title();
