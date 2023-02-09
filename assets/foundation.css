@@ -24,10 +24,7 @@ body {
 }
 
 p {
-  margin: 0 0 1rem 0;
-}
-p:last-child {
-  margin-bottom: 0;
+  margin: 0 0 0.5rem 0;
 }
 
 a:link, a:active, a:visited {
@@ -90,7 +87,7 @@ h2 {
   color: var(--text-color-dimmed, #f0f);
   font-size: 2.5rem;
   line-height: 3rem;
-  margin: 0 0 1rem 0;
+  margin: var(--spacer-full, 500px) 0 var(--spacer-line-break, 500px) 0;
 }
 @media (min-width: 744px) {
   h2 {
@@ -104,14 +101,7 @@ h2 {
     font-size: 4rem;
     line-height: 6rem;
     color: var(--text-color-dimmed, #f0f);
-    margin: 0 0 1rem 0;
   }
-  h2.nude {
-    margin: 2rem 0 1rem 0;
-  }
-}
-h2.nude {
-  margin: 2rem 0 1rem 0;
 }
 
 h3 {
@@ -121,7 +111,7 @@ h3 {
   text-transform: uppercase;
   font-size: 1.25rem;
   line-height: 1.5rem;
-  margin: var(--space-full) 0 1rem 0;
+  margin: var(--spacer-full) 0 var(--spacer-line-break) 0;
 }
 @media (min-width: 744px) {
   h3 {
@@ -299,21 +289,46 @@ aside button, aside .button, aside a[role=button] {
   text-align: center;
 }
 
+main .visually-grouped {
+  border-left: solid 2px var(--color-accent, #f0f);
+  padding-left: 1.5rem;
+  margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
+}
+main .visually-grouped:first-child {
+  margin-top: 0;
+}
+
+main:has(aside) aside {
+  margin-bottom: var(--spacer-full);
+}
+main:has(aside) aside figure {
+  margin: 0 0 1.5rem 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+main:has(aside) aside figure figcaption {
+  font-family: proxima-nova, "Proxima Nova", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--text-color-body-text, #f0f);
+}
+main:has(aside) aside figure img {
+  width: 100%;
+  height: auto;
+}
 header {
   display: flex;
-  gap: var(--grid-gap-mobile, 500px);
-}
-@media (min-width: 1280px) {
-  header {
-    gap: var(--grid-gap-desktop, 500px);
-  }
+  gap: var(--grid-gap, 500px);
 }
 header h1 {
   flex-grow: 1;
 }
 
 header {
-  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap-mobile));
+  max-width: calc(100vw - var(--body-margin) - 1.5rem - var(--grid-gap));
 }
 @media (min-width: 1023px) {
   header {
@@ -421,9 +436,17 @@ header nav a.current {
 }
 
 :root {
-  --grid-gap-desktop: 3rem;
-  --grid-gap-mobile: 1rem;
+  --spacer-full: 2rem;
+  --spacer-line-break: 1rem;
+  --grid-gap: 1rem;
   --body-margin: 0.5rem;
+}
+@media (min-width: 1280px) {
+  :root {
+    --spacer-full: 3rem;
+    --spacer-line-break: 1.5rem;
+    --grid-gap: 3rem;
+  }
 }
 @media (min-width: 375px) {
   :root {

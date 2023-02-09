@@ -1,1 +1,39 @@
+@use 'scss-variables';
+@use 'typography';
+
 // Layout definitions for <main>
+main {
+  .visually-grouped {
+    border-left: solid 2px var(--color-accent, #f0f);
+    padding-left: 1.5rem;
+    margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+main:has(aside) {
+  aside {
+    margin-bottom: var(--spacer-full);
+
+    figure {
+      margin: 0 0 1.5rem 0;
+      padding: 0;
+      font-size: 0;
+      line-height: 0;
+
+      figcaption {
+        @include typography.body-text();
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  div.main {
+
+  }
+}
