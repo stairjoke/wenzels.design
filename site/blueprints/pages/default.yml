@@ -1,6 +1,15 @@
 title: Default Page
 
-fields:
-  Main_Content:
-    type: blocks
-    size: huge
+columns:
+  main:
+    width: 2/3
+    fields:
+      main_content:
+        type: blocks
+        size: huge
+  sidebar:
+    width: 1/3
+    fields:
+      files:
+        type: files
+        label: files
