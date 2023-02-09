@@ -11,8 +11,14 @@
 //Foundational Styles, required by all page types
 
 :root {
-  --grid-gap-desktop: 3rem;
-  --grid-gap-mobile: 1rem;
+  --spacer-full: 2rem;
+  --spacer-line-break: 1rem;
+  --grid-gap: 1rem;
+  @media (min-width: #{scss-variables.$break-point-desktop}){
+    --spacer-full: 3rem;
+    --spacer-line-break: 1.5rem;
+    --grid-gap: 3rem;
+  }
 
   --body-margin: 0.5rem;
   @media (min-width: #{scss-variables.$break-point-XS-phone}) {
