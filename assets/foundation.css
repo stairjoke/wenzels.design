@@ -59,7 +59,7 @@ h1 {
   line-height: 3rem;
   color: var(--text-color-high-contrast, #f0f);
   font-size: 1.5rem;
-  line-height: 3rem;
+  line-height: 2rem;
   margin: 0 0 1rem 0;
 }
 @media (min-width: 744px) {
@@ -88,6 +88,9 @@ h2 {
   font-size: 2.5rem;
   line-height: 3rem;
   margin: var(--spacer-full, 500px) 0 var(--spacer-line-break, 500px) 0;
+}
+h2:first-child {
+  margin-bottom: var(--spacer-full);
 }
 @media (min-width: 744px) {
   h2 {
@@ -289,25 +292,37 @@ aside button, aside .button, aside a[role=button] {
   text-align: center;
 }
 
-main .visually-grouped {
-  border-left: solid 2px var(--color-accent, #f0f);
-  padding-left: 1.5rem;
-  margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
+main section, main h2 {
+  max-width: 49.5rem;
+  margin-left: auto;
+  margin-right: auto;
 }
-main .visually-grouped:first-child {
-  margin-top: 0;
+@media (min-width: 414px) {
+  main section:has(aside), main h2:has(aside) {
+    display: flex;
+    column-gap: var(--grid-gap, 500px);
+  }
+  main section.two-columns, main h2.two-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-flow: row;
+    gap: var(--grid-gap);
+  }
 }
-
-main:has(aside) aside {
+main aside {
   margin-bottom: var(--spacer-full);
+  order: 2;
+  flex-basis: 33.33%;
+  box-sizing: border-box;
+  flex-grow: 1;
 }
-main:has(aside) aside figure {
+main aside figure {
   margin: 0 0 1.5rem 0;
   padding: 0;
   font-size: 0;
   line-height: 0;
 }
-main:has(aside) aside figure figcaption {
+main aside figure figcaption {
   font-family: proxima-nova, "Proxima Nova", sans-serif;
   font-weight: 500;
   font-style: normal;
@@ -315,16 +330,38 @@ main:has(aside) aside figure figcaption {
   line-height: 1.5rem;
   color: var(--text-color-body-text, #f0f);
 }
-main:has(aside) aside figure img {
+main aside figure img {
   width: 100%;
   height: auto;
 }
+main aside + div.main {
+  box-sizing: border-box;
+  flex-basis: 66.66%;
+  flex-grow: 1;
+}
+main .two-columns > div {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+main .visually-grouped {
+  border-left: solid 2px var(--color-accent, #f0f);
+  padding-left: 1.5rem;
+  margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
+}
+main .visually-grouped.aside {
+  border-color: var(--text-color-dimmed);
+}
+main .visually-grouped:first-child {
+  margin-top: 0;
+}
+
 header {
   display: flex;
   gap: var(--grid-gap, 500px);
 }
 header h1 {
   flex-grow: 1;
+  margin-bottom: 0;
 }
 
 header {
@@ -397,7 +434,7 @@ header nav ul {
     line-height: 3rem;
     color: var(--text-color-high-contrast, #f0f);
     font-size: 1.5rem;
-    line-height: 3rem;
+    line-height: 2rem;
   }
   header nav a .CTA {
     color: var(--text-color-inverted);
@@ -441,7 +478,7 @@ header nav a.current {
   --grid-gap: 1rem;
   --body-margin: 0.5rem;
 }
-@media (min-width: 1280px) {
+@media (min-width: 744px) {
   :root {
     --spacer-full: 3rem;
     --spacer-line-break: 1.5rem;
@@ -470,10 +507,23 @@ body {
   background: var(--color-page, #f0f);
 }
 
+footer {
+  max-width: 49.5rem;
+  margin: calc(var(--spacer-full) * 2) auto 0 auto;
+}
+
 svg.icon {
   width: 1.5rem;
   height: 1.5rem;
   display: block;
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+.wip-skill {
+  color: var(--text-color-dimmed);
 }
 
 /*# sourceMappingURL=foundation.css.map */

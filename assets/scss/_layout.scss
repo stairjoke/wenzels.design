@@ -3,19 +3,39 @@
 
 // Layout definitions for <main>
 main {
-  .visually-grouped {
-    border-left: solid 2px var(--color-accent, #f0f);
-    padding-left: 1.5rem;
-    margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
-    &:first-child {
-      margin-top: 0;
+  // The desktop design was tailored to 1728px wide (16" MacBook Pro), it had
+  // 12 columns with a 48px (3rem) gutter (16px/1rem on mobile), the central
+  // six are used to anything that is not an illustration. The central six
+  // columns are 49.5rem wide at 1rem=16px.
+
+  // The mobile layout technically has columns, but it uses only all four at
+  // the same time.
+
+  section, h2 {
+    max-width: 49.5rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: #{scss-variables.$break-point-phablet}){
+      &:has(aside) {
+        display: flex;
+        column-gap: var(--grid-gap, 500px);
+      }
+      &.two-columns {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-flow: row;
+        gap: var(--grid-gap);
+      }
     }
   }
-}
 
-main:has(aside) {
   aside {
     margin-bottom: var(--spacer-full);
+    order: 2;
+    flex-basis: 33.33%;
+    box-sizing: border-box;
+    flex-grow: 1;
 
     figure {
       margin: 0 0 1.5rem 0;
@@ -33,7 +53,27 @@ main:has(aside) {
       }
     }
   }
-  div.main {
+  aside+div.main {
+    // change div.main is directly preceded by an aside
+    box-sizing: border-box;
+    flex-basis: 66.66%;
+    flex-grow: 1;
+  }
+  .two-columns > div {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 
+  }
+
+  .visually-grouped {
+    border-left: solid 2px var(--color-accent, #f0f);
+    &.aside {
+      border-color: var(--text-color-dimmed);
+    }
+    padding-left: 1.5rem;
+    margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
