@@ -1,0 +1,8 @@
+title: Default Page
+
+fields:
+  card_text:
+    type: blocks
+    size: medium
+  button_label:
+    type: text
