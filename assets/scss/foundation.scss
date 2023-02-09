@@ -14,7 +14,7 @@
   --spacer-full: 2rem;
   --spacer-line-break: 1rem;
   --grid-gap: 1rem;
-  @media (min-width: #{scss-variables.$break-point-desktop}){
+  @media (min-width: #{scss-variables.$break-point-tablet}){
     --spacer-full: 3rem;
     --spacer-line-break: 1.5rem;
     --grid-gap: 3rem;
@@ -54,4 +54,12 @@ svg.icon {
 	width: 1.5rem;
 	height: 1.5rem;
   display: block;
+}
+
+img {
+  border-radius: 0.5rem;
+}
+
+.wip-skill {
+  color: var(--text-color-dimmed);
 }
