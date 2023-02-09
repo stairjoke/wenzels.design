@@ -44,6 +44,12 @@ body {
   background: var(--color-page, #f0f);
 }
 
+footer {
+  max-width: 49.5rem;
+  margin: calc(var(--spacer-full) * 2) auto 0 auto;
+  //see _layout.scss
+}
+
 svg.icon {
 	width: 1.5rem;
 	height: 1.5rem;
