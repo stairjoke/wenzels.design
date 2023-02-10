@@ -7,13 +7,13 @@
 		</div>
 	</article>
 <?php foreach(page('projects')->children() as $project): ?>
-	<article>
+	<article><a class="card" href="<?= $project->url() ?>">
 		<h3><?= $project->title() ?></h3>
 		<div class=card-body>
 			<?= $project->image() ?>
 			<p><?= $project->tagline() ?></p>
 		</div>
-	</article>
+	</a></article>
 <?php endforeach;	?>
 </main>
 <?= snippet('footer') ?>

@@ -16,13 +16,59 @@ main {
     @media(min-width: #{scss-variables.$break-point-tablet}){
       margin-bottom: 0;
     }
-    padding: 1.5rem;
-    background-color: var(--color-visual-grouping);
-    text-align: center;
-
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    a.card {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 1.5rem;
+      box-sizing: border-box;
+
+      background-color: var(--color-visual-grouping);
+      border-radius: 0.5rem;
+
+      text-align: center;
+
+      &, &:visited, &:active {
+        text-decoration: none;
+
+        transition-property: box-shadow, transform;
+        transition-duration: 240ms;
+        transition-timing-function: ease-out;
+
+        box-shadow:
+        0 0 0 0 var(--color-shadow, #f0f),
+        inset 0 0 0 0 var(--color-shadow, f0f);
+      }
+      &:hover, &:focus {
+        transition-duration: 120ms;
+        transition-timing-function: cubic-bezier(1, 1.5, .75, .87);
+
+        transform: scale(1.0075);
+        box-shadow:
+          0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f),
+          inset 0 0 0 0 var(--color-shadow, f0f);
+      }
+
+      &:hover, &:focus {
+        box-shadow:
+        0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f),
+        inset 0 0 0 0 var(--color-shadow, f0f);
+      }
+
+      &:active {
+        transition-duration: 100ms;
+
+        box-shadow:
+          0 0 0 0 var(--color-shadow, #f0f),
+          inset .125rem .125rem .125rem 0 var(--color-shadow, f0f);
+      }
+    }
 
     figure, img {
       width: 100%;
