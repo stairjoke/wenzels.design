@@ -73,6 +73,11 @@ main article.CTA > div {
   main article.CTA > div {
     margin: 0 auto;
     padding: var(--grid-gap) 0;
+    width: calc(50% + 3rem);
+  }
+}
+@media (min-width: 1024px) {
+  main article.CTA > div {
     width: calc(33.33% + 3rem);
   }
 }
