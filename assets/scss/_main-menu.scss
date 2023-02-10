@@ -46,26 +46,32 @@ header {
 				display: none;
 			}
 
-			&:checked {
-				& ~ label {
-					position: fixed;
-				}
-				& ~ .triggered-by-nav-toggle #close {
-					display: unset;
-				}
+      @media (max-width: #{scss-variables.$break-point-desktop-S- + (-1px)}) {
+        //Safari applies the @media rule only after a few seconds, before that
+        // the menu looks wonky if it was opened on a mobile site before the user
+        // resized the window.
 
-				& ~ .triggered-by-nav-toggle #menu {
-					display: none;
-				}
-				& ~ .menu.triggered-by-nav-toggle {
-					display: flex;
+			  &:checked {
+				  & ~ label {
+					  position: fixed;
+				  }
+				  & ~ .triggered-by-nav-toggle #close {
+					  display: unset;
+				  }
 
-					margin: 0;
-					padding: var(--body-margin);
-					min-height: 100vh;
-					min-height: 100lvh;
-				}
-			}
+				  & ~ .triggered-by-nav-toggle #menu {
+					  display: none;
+				  }
+				  & ~ .menu.triggered-by-nav-toggle {
+					  display: flex;
+
+					  margin: 0;
+					  padding: var(--body-margin);
+					  min-height: 100vh;
+					  min-height: 100lvh;
+				  }
+			  }
+      }
 		}
 
 		ul {
@@ -74,12 +80,12 @@ header {
 		}
 
 		a {
-			@media (max-width: #{(scss-variables.$break-point-desktop-S- -1px)}) {
+      @media (max-width: #{scss-variables.$break-point-desktop-S- + (-1px)}) {
         @include typography.S-headline;
-				.CTA {
-					color: var(--text-color-inverted);
-				}
-			}
+        .CTA {
+          color: var(--text-color-inverted);
+        }
+      }
 
 			&:link, &:active, &:visited {
 				text-decoration: none;

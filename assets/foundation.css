@@ -406,27 +406,29 @@ header nav input[type=checkbox]#nav-toggle {
 header nav input[type=checkbox]#nav-toggle + label #close {
   display: none;
 }
-header nav input[type=checkbox]#nav-toggle:checked ~ label {
-  position: fixed;
-}
-header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #close {
-  display: unset;
-}
-header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #menu {
-  display: none;
-}
-header nav input[type=checkbox]#nav-toggle:checked ~ .menu.triggered-by-nav-toggle {
-  display: flex;
-  margin: 0;
-  padding: var(--body-margin);
-  min-height: 100vh;
-  min-height: 100lvh;
+@media (max-width: 1022px) {
+  header nav input[type=checkbox]#nav-toggle:checked ~ label {
+    position: fixed;
+  }
+  header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #close {
+    display: unset;
+  }
+  header nav input[type=checkbox]#nav-toggle:checked ~ .triggered-by-nav-toggle #menu {
+    display: none;
+  }
+  header nav input[type=checkbox]#nav-toggle:checked ~ .menu.triggered-by-nav-toggle {
+    display: flex;
+    margin: 0;
+    padding: var(--body-margin);
+    min-height: 100vh;
+    min-height: 100lvh;
+  }
 }
 header nav ul {
   list-style: none;
   padding: 0;
 }
-@media (max-width: 1023px -1px) {
+@media (max-width: 1022px) {
   header nav a {
     font-family: futura-pt, "Futura PT", sans-serif;
     font-weight: 600;
