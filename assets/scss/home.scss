@@ -36,6 +36,7 @@ main {
 
       &, &:visited, &:active {
         text-decoration: none;
+        color: var(--text-color-body-text);
 
         transition-property: box-shadow, transform;
         transition-duration: 240ms;

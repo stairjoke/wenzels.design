@@ -29,6 +29,7 @@ main article a.card {
 }
 main article a.card, main article a.card:visited, main article a.card:active {
   text-decoration: none;
+  color: var(--text-color-body-text);
   transition-property: box-shadow, transform;
   transition-duration: 240ms;
   transition-timing-function: ease-out;
