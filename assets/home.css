@@ -46,6 +46,7 @@ main article a.card:hover, main article a.card:focus {
 }
 main article a.card:active {
   transition-duration: 100ms;
+  transform: scale(0.995);
   box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
 }
 main article figure, main article img {

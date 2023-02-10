@@ -264,6 +264,7 @@ button:hover, button:focus, .button:hover, .button:focus, a[role=button]:hover, 
 }
 button:active, .button:active, a[role=button]:active {
   transition-duration: 50ms;
+  transform: scale(0.995);
   box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
 }
 button.nav-button, .button.nav-button, a[role=button].nav-button {

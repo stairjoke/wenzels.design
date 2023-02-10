@@ -43,6 +43,7 @@ button, .button, a[role=button] {
   &:active {
     transition-duration: 50ms;
 
+    transform: scale(0.995);
     box-shadow:
       0 0 0 0 var(--color-shadow, #f0f),
       inset .125rem .125rem .125rem 0 var(--color-shadow, f0f);
