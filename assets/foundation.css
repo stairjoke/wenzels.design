@@ -237,6 +237,7 @@ button, .button, a[role=button] {
   line-height: 1.5rem;
   color: var(--text-color-body-text, #f0f);
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
+  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
   border: solid 1px transparent;
   border-radius: 2px;
   transition-property: box-shadow, transform;
@@ -246,6 +247,7 @@ button, .button, a[role=button] {
   border: solid 1px var(--text-color-body-text, #f0f);
   box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
   text-decoration: none;
+  text-align: center;
   color: var(--text-color-body-text, #f0f);
 }
 button:link, button:active, button:visited, .button:link, .button:active, .button:visited, a[role=button]:link, a[role=button]:active, a[role=button]:visited {
@@ -269,7 +271,7 @@ button.nav-button, .button.nav-button, a[role=button].nav-button {
   background-color: var(--color-page, #f0f);
   border: none;
   padding: 0.25rem 0.5rem;
-  margin-top: -0.25rem;
+  margin: 0.75rem 0 0 0;
 }
 button.nav-button.current, .button.nav-button.current, a[role=button].nav-button.current {
   background-color: var(--color-visual-grouping, #f0f);
