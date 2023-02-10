@@ -1,0 +1,13 @@
+title: Projects Page
+
+sections:
+  listed-projects:
+    label: Listed
+    type: pages
+    status: listed
+    layout: cards
+  unlisted-projects:
+    label: Not listed
+    type: pages
+    status: unlisted
+    layout: cards
