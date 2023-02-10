@@ -7,17 +7,45 @@
 }
 main article {
   margin-bottom: var(--grid-gap);
-  padding: 1.5rem;
-  background-color: var(--color-visual-grouping);
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 @media (min-width: 744px) {
   main article {
     margin-bottom: 0;
   }
+}
+main article a.card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: var(--color-visual-grouping);
+  border-radius: 0.5rem;
+  text-align: center;
+}
+main article a.card, main article a.card:visited, main article a.card:active {
+  text-decoration: none;
+  transition-property: box-shadow, transform;
+  transition-duration: 240ms;
+  transition-timing-function: ease-out;
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+}
+main article a.card:hover, main article a.card:focus {
+  transition-duration: 120ms;
+  transition-timing-function: cubic-bezier(1, 1.5, 0.75, 0.87);
+  transform: scale(1.0075);
+  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+}
+main article a.card:hover, main article a.card:focus {
+  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+}
+main article a.card:active {
+  transition-duration: 100ms;
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
 }
 main article figure, main article img {
   width: 100%;
