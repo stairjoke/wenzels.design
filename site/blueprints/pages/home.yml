@@ -6,3 +6,5 @@ fields:
     size: medium
   button_label:
     type: text
+  button_url:
+    type: url
