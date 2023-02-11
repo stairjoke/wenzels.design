@@ -6,7 +6,7 @@ button, .button, a[role=button] {
   display: block;
   @include typography.body-text();
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
-  margin: 0;
+  margin: 0 0 0.125rem 0;
 	border: solid 1px transparent;
   border-radius: var(--border-radius-default);
 
@@ -54,7 +54,7 @@ button, .button, a[role=button] {
     background-color: var(--color-page, #f0f);
     border: none;
     padding: 0.25rem 0.5rem;
-    margin-top: 0.75rem;
+    margin: 0.75rem 0 0 0;
 
     &.current {
       background-color: var(--color-visual-grouping, #f0f);
