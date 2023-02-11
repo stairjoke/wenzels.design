@@ -81,6 +81,19 @@ main.default {
       margin: var(--spacer-line-break) 0 0 0;
     }
 
+    @media (max-width: #{scss-variables.$break-point-tablet-}) {
+      &.clip {
+        aspect-ratio: 1;
+        overflow: hidden;
+        padding: .5rem .5rem 0 .5rem;
+        background-color: var(--color-visual-grouping);
+
+        figure {
+          margin: 0;
+        }
+      }
+    }
+
     // On phablet until tablet sizes, the aside floats to the right and
     // limits its own size to 50%. It adds a margin to itself to separate
     // from the rest of the content

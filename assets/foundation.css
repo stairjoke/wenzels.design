@@ -347,6 +347,17 @@ main.default aside.floor {
   order: 2;
   margin: var(--spacer-line-break) 0 0 0;
 }
+@media (max-width: 743px) {
+  main.default aside.clip {
+    aspect-ratio: 1;
+    overflow: hidden;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    background-color: var(--color-visual-grouping);
+  }
+  main.default aside.clip figure {
+    margin: 0;
+  }
+}
 @media (min-width: 414px) and (max-width: 743px) {
   main.default aside {
     float: right;
