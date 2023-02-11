@@ -20,6 +20,8 @@
     --grid-gap: 3rem;
   }
 
+  --border-radius-default: 0.5rem;
+
   --body-margin: 0.5rem;
   @media (min-width: #{scss-variables.$break-point-XS-phone}) {
     --body-margin: 1rem;
@@ -57,7 +59,7 @@ svg.icon {
 }
 
 img {
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-default);
 }
 
 .wip-skill {

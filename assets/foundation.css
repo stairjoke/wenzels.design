@@ -239,7 +239,7 @@ button, .button, a[role=button] {
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
   margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
   border: solid 1px transparent;
-  border-radius: 2px;
+  border-radius: var(--border-radius-default);
   transition-property: box-shadow, transform;
   transition-duration: 240ms;
   transition-timing-function: ease-out;
@@ -481,6 +481,7 @@ header nav a.current {
   --spacer-full: 2rem;
   --spacer-line-break: 1rem;
   --grid-gap: 1rem;
+  --border-radius-default: 0.5rem;
   --body-margin: 0.5rem;
 }
 @media (min-width: 744px) {
@@ -524,7 +525,7 @@ svg.icon {
 }
 
 img {
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-default);
 }
 
 .wip-skill {

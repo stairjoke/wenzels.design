@@ -24,7 +24,7 @@ main article a.card {
   padding: 1.5rem;
   box-sizing: border-box;
   background-color: var(--color-visual-grouping);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-default);
   text-align: center;
 }
 main article a.card, main article a.card:visited, main article a.card:active {
@@ -82,6 +82,10 @@ main article.CTA > div {
   main article.CTA > div {
     width: calc(33.33% + 3rem);
   }
+}
+
+footer {
+  max-width: unset;
 }
 
 /*# sourceMappingURL=home.css.map */
