@@ -304,9 +304,18 @@ main.default section, main.default h2, main.default p {
   margin-left: auto;
   margin-right: auto;
 }
+main.default section:has(aside) {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 414px) and (max-width: 743px) {
+  main.default section:has(aside) {
+    display: block;
+  }
+}
 @media (min-width: 744px) {
   main.default section:has(aside) {
-    display: flex;
+    flex-direction: row;
     column-gap: var(--grid-gap, 500px);
   }
   main.default section.two-columns {
@@ -319,10 +328,16 @@ main.default section, main.default h2, main.default p {
 main.default aside {
   margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
   order: 2;
-  flex-basis: 33.33%;
   box-sizing: border-box;
   flex-grow: 0;
   flex-shrink: 0;
+}
+@media (min-width: 414px) and (max-width: 743px) {
+  main.default aside {
+    float: right;
+    margin: 0 0 var(--spacer-full) var(--grid-gap);
+    width: calc(50% - var(--grid-gap) / 2);
+  }
 }
 main.default aside.floor {
   align-self: flex-end;
@@ -330,6 +345,7 @@ main.default aside.floor {
 @media (min-width: 744px) {
   main.default aside {
     margin: 0;
+    flex-basis: 33.33%;
   }
 }
 main.default aside figure {

@@ -18,9 +18,18 @@ main.default {
   }
 
   section {
+    &:has(aside) {
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
+      &:has(aside) {
+        display: block;
+      }
+    }
     @media (min-width: #{scss-variables.$break-point-tablet}){
       &:has(aside) {
-        display: flex;
+        flex-direction: row;
         column-gap: var(--grid-gap, 500px);
       }
       &.two-columns {
@@ -33,15 +42,20 @@ main.default {
   }
 
   aside {
+    @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
+      float: right;
+      margin: 0 0 var(--spacer-full) var(--grid-gap);
+      width: calc(50% - (var(--grid-gap) / 2));
+    }
     &.floor {
       align-self: flex-end;
     }
     margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
     @media (min-width: #{scss-variables.$break-point-tablet}){
       margin: 0;
+      flex-basis: 33.33%;
     }
     order: 2;
-    flex-basis: 33.33%;
     box-sizing: border-box;
     flex-grow: 0;
     flex-shrink: 0;
