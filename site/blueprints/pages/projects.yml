@@ -11,3 +11,8 @@ sections:
     type: pages
     status: unlisted
     layout: cards
+  draft-projects:
+    label: Drafts
+    type: pages
+    status: draft
+    layout: cards
