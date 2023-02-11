@@ -326,8 +326,7 @@ main.default section:has(aside) {
   }
 }
 main.default aside {
-  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
-  order: 2;
+  margin: 0 0 var(--spacer-full) 0;
   box-sizing: border-box;
   flex-grow: 0;
   flex-shrink: 0;
@@ -392,6 +391,14 @@ main.default .visually-grouped-list.aside {
 }
 main.default .visually-grouped-list:first-child {
   margin-top: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2, .floor {
+  order: 2;
 }
 
 header {
