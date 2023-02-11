@@ -11,12 +11,14 @@ main.default {
   // The mobile layout technically has columns, but it uses only all four at
   // the same time.
 
-  section, h2 {
+  section, h2, p {
     max-width: 49.5rem;
     margin-left: auto;
     margin-right: auto;
+  }
 
-    @media (min-width: #{scss-variables.$break-point-phablet}){
+  section {
+    @media (min-width: #{scss-variables.$break-point-tablet}){
       &:has(aside) {
         display: flex;
         column-gap: var(--grid-gap, 500px);
@@ -34,14 +36,15 @@ main.default {
     &.floor {
       align-self: flex-end;
     }
-    margin-bottom: var(--spacer-full);
-    @media (min-width: #{scss-variables.$break-point-phablet}){
-      margin-bottom: 0;
+    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    @media (min-width: #{scss-variables.$break-point-tablet}){
+      margin: 0;
     }
     order: 2;
     flex-basis: 33.33%;
     box-sizing: border-box;
     flex-grow: 0;
+    flex-shrink: 0;
 
     figure {
       margin: 0 0 1.5rem 0;
@@ -59,16 +62,17 @@ main.default {
       }
     }
   }
-  aside+div.main {
-    // change div.main is directly preceded by an aside
-    box-sizing: border-box;
-    flex-basis: 66.66%;
-    flex-grow: 1;
-  }
   .two-columns > div {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
 
+  }
+
+  figure {
+    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    * {
+      max-width: 100%;
+    }
   }
 
   .visually-grouped-block {
