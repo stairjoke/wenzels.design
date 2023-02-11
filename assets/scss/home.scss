@@ -30,7 +30,7 @@ main {
       box-sizing: border-box;
 
       background-color: var(--color-visual-grouping);
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius-default);
 
       text-align: center;
 
@@ -109,4 +109,7 @@ main {
       }
     }
   }
+}
+footer {
+  max-width: unset;
 }
