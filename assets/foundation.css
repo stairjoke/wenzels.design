@@ -24,6 +24,10 @@ body {
 }
 
 p {
+  margin: 0;
+}
+
+h1 + p, h2 + p, h3 + p, h4 + p, p + p, ul + p, ol + p, figure + p {
   margin: 0.5rem 0 0 0;
 }
 
@@ -174,7 +178,7 @@ p.teaser {
   line-height: 1.5rem;
   color: var(--text-color-body-text, #f0f);
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 3rem;
   font-size: 1.25rem;
   line-height: 2rem;
@@ -189,7 +193,7 @@ p.teaser {
     line-height: 1.5rem;
     color: var(--text-color-body-text, #f0f);
     font-weight: 300;
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 3rem;
   }
 }
@@ -237,7 +241,7 @@ button, .button, a[role=button] {
   line-height: 1.5rem;
   color: var(--text-color-body-text, #f0f);
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
-  margin: 0;
+  margin: 0 0 0.125rem 0;
   border: solid 1px transparent;
   border-radius: var(--border-radius-default);
   transition-property: box-shadow, transform;
@@ -272,7 +276,7 @@ button.nav-button, .button.nav-button, a[role=button].nav-button {
   background-color: var(--color-page, #f0f);
   border: none;
   padding: 0.25rem 0.5rem;
-  margin-top: 0.75rem;
+  margin: 0.75rem 0 0 0;
 }
 button.nav-button.current, .button.nav-button.current, a[role=button].nav-button.current {
   background-color: var(--color-visual-grouping, #f0f);
@@ -295,17 +299,17 @@ aside button, aside .button, aside a[role=button] {
   text-align: center;
 }
 
-main.default section, main.default h2 {
+main.default section, main.default h2, main.default p {
   max-width: 49.5rem;
   margin-left: auto;
   margin-right: auto;
 }
-@media (min-width: 414px) {
-  main.default section:has(aside), main.default h2:has(aside) {
+@media (min-width: 744px) {
+  main.default section:has(aside) {
     display: flex;
     column-gap: var(--grid-gap, 500px);
   }
-  main.default section.two-columns, main.default h2.two-columns {
+  main.default section.two-columns {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-auto-flow: row;
@@ -313,18 +317,19 @@ main.default section, main.default h2 {
   }
 }
 main.default aside {
-  margin-bottom: var(--spacer-full);
+  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
   order: 2;
   flex-basis: 33.33%;
   box-sizing: border-box;
   flex-grow: 0;
+  flex-shrink: 0;
 }
 main.default aside.floor {
   align-self: flex-end;
 }
-@media (min-width: 414px) {
+@media (min-width: 744px) {
   main.default aside {
-    margin-bottom: 0;
+    margin: 0;
   }
 }
 main.default aside figure {
@@ -345,14 +350,15 @@ main.default aside figure img {
   width: 100%;
   height: auto;
 }
-main.default aside + div.main {
-  box-sizing: border-box;
-  flex-basis: 66.66%;
-  flex-grow: 1;
-}
 main.default .two-columns > div {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+}
+main.default figure {
+  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+}
+main.default figure * {
+  max-width: 100%;
 }
 main.default .visually-grouped-block {
   background-color: var(--color-visual-grouping, #f0f);

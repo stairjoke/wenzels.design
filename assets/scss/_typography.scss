@@ -20,8 +20,13 @@ body {
   @include body-text();
 }
 
-p {
-  margin: .5rem 0 0 0;
+p{
+  margin: 0;
+}
+h1, h2, h3, h4, p, ul, ol, figure {
+  &+p {
+    margin: .5rem 0 0 0;
+  }
 }
 
 a {
@@ -197,7 +202,7 @@ ul {
   @include body-text();
 
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 3rem;
 }
 
