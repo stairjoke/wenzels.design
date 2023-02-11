@@ -304,9 +304,19 @@ main.default section, main.default h2, main.default p {
   margin-left: auto;
   margin-right: auto;
 }
+main.default section {
+  margin-top: var(--spacer-line-break);
+  margin-bottom: var(--spacer-full);
+}
 main.default section:has(aside) {
   display: flex;
   flex-direction: column;
+}
+main.default section:has(aside).vertical-center {
+  align-items: center;
+}
+main.default section:has(aside) > div {
+  order: 1;
 }
 @media (min-width: 414px) and (max-width: 743px) {
   main.default section:has(aside) {
@@ -327,12 +337,14 @@ main.default section:has(aside) {
 }
 main.default aside {
   margin: 0 0 var(--spacer-full) 0;
+  order: 0;
   box-sizing: border-box;
   flex-grow: 0;
   flex-shrink: 0;
 }
 main.default aside.floor {
   align-self: flex-end;
+  order: 2;
   margin: var(--spacer-line-break) 0 0 0;
 }
 @media (min-width: 414px) and (max-width: 743px) {
@@ -344,37 +356,38 @@ main.default aside.floor {
 }
 @media (min-width: 744px) {
   main.default aside {
+    order: 2;
     margin: 0;
     flex-basis: 33.33%;
   }
-}
-main.default aside figure {
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
-}
-main.default aside figure figcaption {
-  font-family: proxima-nova, "Proxima Nova", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: var(--text-color-body-text, #f0f);
-}
-main.default aside figure img {
-  width: 100%;
-  height: auto;
+  main.default aside.left {
+    order: 0;
+  }
 }
 main.default .two-columns > div {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 main.default figure {
+  border-radius: var(--border-radius-default);
   margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+  box-sizing: border-box;
 }
 main.default figure * {
   max-width: 100%;
+}
+main.default figure.floating-illustration {
+  background-color: var(--color-visual-grouping);
+  padding: var(--grid-gap);
+  box-sizing: border-box;
+  text-align: center;
+}
+main.default figure.floating-illustration img {
+  max-width: min(49.5rem, 100%);
+  height: auto;
+}
+main.default figure.floating-illustration video {
+  max-height: calc(50vw - var(--body-margin));
 }
 main.default .visually-grouped-block {
   background-color: var(--color-visual-grouping, #f0f);
@@ -391,14 +404,6 @@ main.default .visually-grouped-list.aside {
 }
 main.default .visually-grouped-list:first-child {
   margin-top: 0;
-}
-
-.order-1 {
-  order: 1;
-}
-
-.order-2, .floor {
-  order: 2;
 }
 
 header {

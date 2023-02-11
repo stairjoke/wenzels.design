@@ -18,20 +18,47 @@ main.default {
   }
 
   section {
+    // Stacked sections space correctly
+    margin-top: var(--spacer-line-break);
+    margin-bottom: var(--spacer-full);
+
+    // Sections containing an aside use flex to layout top to bottom on mobile
+    // and left to right on desktop
     &:has(aside) {
       display: flex;
       flex-direction: column;
+
+      // By default section children stop to the top of the section, but some
+      // layouts call for a vertically-centered layout
+      &.vertical-center {
+        align-items: center;
+      }
+
+      // The main div uses the order: 1 instead of 0 to allow other elements to
+      // push themselves above/left of it
+      &>div {
+        order: 1;
+      }
     }
+
+    // On sizes between phablet and tablet the flex is disabled and the aside
+    // floats to the right.
     @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
       &:has(aside) {
         display: block;
       }
     }
+
+    // On sizes from tablet and larger the flex direction is left to right,
+    // instead of top-down
     @media (min-width: #{scss-variables.$break-point-tablet}){
       &:has(aside) {
         flex-direction: row;
         column-gap: var(--grid-gap, 500px);
       }
+
+      // Sections flagged as "two columns" use a grid to lay out their
+      // children. This will not work correctly for text.
       &.two-columns {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -41,41 +68,48 @@ main.default {
     }
   }
 
+  // The aside, by default, stacks above the div.main (which uses order: 1)
   aside {
     margin: 0 0 var(--spacer-full) 0;
+    order: 0;
+
+    // Asides flagged as .floor position themselves at the bottom of the
+    // containing section. They stack themselves last (order: 2 instead of 0).
     &.floor {
       align-self: flex-end;
+      order: 2;
       margin: var(--spacer-line-break) 0 0 0;
     }
+
+    // On phablet until tablet sizes, the aside floats to the right and
+    // limits its own size to 50%. It adds a margin to itself to separate
+    // from the rest of the content
     @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
       float: right;
       margin: 0 0 var(--spacer-full) var(--grid-gap) !important;
       width: calc(50% - (var(--grid-gap) / 2));
     }
+
+    // On sizes tablet and larger, the aside limits its width to 33% and
+    // removes all margins. The spaces are set using gap. It places itself
+    // at the end of the stack.
     @media (min-width: #{scss-variables.$break-point-tablet}){
+      order: 2;
+      &.left {
+        // Asides flagged to be on the left will stack themselves first
+        order: 0;
+      }
       margin: 0;
       flex-basis: 33.33%;
     }
+
+    //The aside sizes itself to be as big as its content including paddings.
+    // It does not grow or shrink below/above 33%.
     box-sizing: border-box;
     flex-grow: 0;
     flex-shrink: 0;
-
-    figure {
-      margin: 0 0 1.5rem 0;
-      padding: 0;
-      font-size: 0;
-      line-height: 0;
-
-      figcaption {
-        @include typography.body-text();
-      }
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
   }
+
   .two-columns > div {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -83,9 +117,27 @@ main.default {
   }
 
   figure {
+    border-radius: var(--border-radius-default);
     margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    box-sizing: border-box;
+
     * {
       max-width: 100%;
+    }
+
+    &.floating-illustration {
+      background-color: var(--color-visual-grouping);
+      padding: var(--grid-gap);
+      box-sizing: border-box;
+      text-align: center;
+
+      img {
+        max-width: min(49.5rem, 100%);
+        height: auto;
+      }
+      video {
+        max-height: calc(50vw - var(--body-margin));
+      }
     }
   }
 
@@ -106,11 +158,4 @@ main.default {
       margin-top: 0;
     }
   }
-}
-
-.order-1 {
-  order: 1;
-}
-.order-2, .floor {
-  order: 2;
 }
