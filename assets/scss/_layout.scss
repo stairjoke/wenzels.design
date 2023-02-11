@@ -42,15 +42,16 @@ main.default {
   }
 
   aside {
-    @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
-      float: right;
-      margin: 0 0 var(--spacer-full) var(--grid-gap);
-      width: calc(50% - (var(--grid-gap) / 2));
-    }
+    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
     &.floor {
       align-self: flex-end;
+      margin: var(--spacer-line-break) 0 0 0;
     }
-    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    @media (min-width: #{scss-variables.$break-point-phablet}) and (max-width: #{scss-variables.$break-point-tablet-}){
+      float: right;
+      margin: 0 0 var(--spacer-full) var(--grid-gap) !important;
+      width: calc(50% - (var(--grid-gap) / 2));
+    }
     @media (min-width: #{scss-variables.$break-point-tablet}){
       margin: 0;
       flex-basis: 33.33%;

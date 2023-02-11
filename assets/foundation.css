@@ -332,15 +332,16 @@ main.default aside {
   flex-grow: 0;
   flex-shrink: 0;
 }
+main.default aside.floor {
+  align-self: flex-end;
+  margin: var(--spacer-line-break) 0 0 0;
+}
 @media (min-width: 414px) and (max-width: 743px) {
   main.default aside {
     float: right;
-    margin: 0 0 var(--spacer-full) var(--grid-gap);
+    margin: 0 0 var(--spacer-full) var(--grid-gap) !important;
     width: calc(50% - var(--grid-gap) / 2);
   }
-}
-main.default aside.floor {
-  align-self: flex-end;
 }
 @media (min-width: 744px) {
   main.default aside {
