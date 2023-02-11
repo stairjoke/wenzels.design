@@ -31,11 +31,17 @@ main.default {
   }
 
   aside {
+    &.floor {
+      align-self: flex-end;
+    }
     margin-bottom: var(--spacer-full);
+    @media (min-width: #{scss-variables.$break-point-phablet}){
+      margin-bottom: 0;
+    }
     order: 2;
     flex-basis: 33.33%;
     box-sizing: border-box;
-    flex-grow: 1;
+    flex-grow: 0;
 
     figure {
       margin: 0 0 1.5rem 0;
@@ -65,7 +71,13 @@ main.default {
 
   }
 
-  .visually-grouped {
+  .visually-grouped-block {
+    background-color: var(--color-visual-grouping, #f0f);
+    border-radius: var(--border-radius-default);
+    padding: var(--spacer-line-break);
+  }
+
+  .visually-grouped-list {
     border-left: solid 2px var(--color-accent, #f0f);
     &.aside {
       border-color: var(--text-color-dimmed);
