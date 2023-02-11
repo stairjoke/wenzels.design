@@ -3,7 +3,7 @@
 	<article class="CTA">
 		<div>
 			<?= $page->card_text()->toBlocks() ?>
-			<a class="button cta" href="<?= ($page->button_url()->exists()) ? $page->button_url() : $site->Contact_Link() ?>"><?= $page->button_label() ?></a>
+			<p><a class="button cta" href="<?= ($page->button_url()->exists()) ? $page->button_url() : $site->Contact_Link() ?>"><?= $page->button_label() ?></a></p>
 		</div>
 	</article>
 <?php foreach(page('projects')->children()->listed() as $project): ?>
