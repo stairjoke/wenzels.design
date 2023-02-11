@@ -24,7 +24,7 @@ body {
 }
 
 p {
-  margin: 0 0 0.5rem 0;
+  margin: 0.5rem 0 0 0;
 }
 
 a:link, a:active, a:visited {
@@ -237,7 +237,7 @@ button, .button, a[role=button] {
   line-height: 1.5rem;
   color: var(--text-color-body-text, #f0f);
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
-  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+  margin: 0;
   border: solid 1px transparent;
   border-radius: var(--border-radius-default);
   transition-property: box-shadow, transform;
@@ -272,7 +272,7 @@ button.nav-button, .button.nav-button, a[role=button].nav-button {
   background-color: var(--color-page, #f0f);
   border: none;
   padding: 0.25rem 0.5rem;
-  margin: 0.75rem 0 0 0;
+  margin-top: 0.75rem;
 }
 button.nav-button.current, .button.nav-button.current, a[role=button].nav-button.current {
   background-color: var(--color-visual-grouping, #f0f);
@@ -317,7 +317,15 @@ main.default aside {
   order: 2;
   flex-basis: 33.33%;
   box-sizing: border-box;
-  flex-grow: 1;
+  flex-grow: 0;
+}
+main.default aside.floor {
+  align-self: flex-end;
+}
+@media (min-width: 414px) {
+  main.default aside {
+    margin-bottom: 0;
+  }
 }
 main.default aside figure {
   margin: 0 0 1.5rem 0;
@@ -346,15 +354,20 @@ main.default .two-columns > div {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
-main.default .visually-grouped {
+main.default .visually-grouped-block {
+  background-color: var(--color-visual-grouping, #f0f);
+  border-radius: var(--border-radius-default);
+  padding: var(--spacer-line-break);
+}
+main.default .visually-grouped-list {
   border-left: solid 2px var(--color-accent, #f0f);
   padding-left: 1.5rem;
   margin: var(--spacer-full) 0 var(--spacer-line-break, 500px) 0;
 }
-main.default .visually-grouped.aside {
+main.default .visually-grouped-list.aside {
   border-color: var(--text-color-dimmed);
 }
-main.default .visually-grouped:first-child {
+main.default .visually-grouped-list:first-child {
   margin-top: 0;
 }
 
