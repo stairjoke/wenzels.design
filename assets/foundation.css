@@ -424,6 +424,12 @@ header {
   display: flex;
   gap: var(--grid-gap, 500px);
 }
+header a, header a:link, header a:active, header a:visited, header a:hover, header a:focus {
+  text-decoration: none;
+}
+header a:focus-visible h1 {
+  text-decoration: underline;
+}
 header h1 {
   flex-grow: 1;
   margin-bottom: 0;

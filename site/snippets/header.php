@@ -12,7 +12,7 @@
 	</head>
 <body>
 	<header>
-		<?= get_header_title_as_html($site) ?>
+		<a href="<?= $site->url() ?>" tabindex="1"><?= get_header_title_as_html($site) ?></a>
 		<nav>
 			<!--
 					The input[type=checkbox]#nav-toggle triggers all .triggered-by-nav-toggle nodes to change the menu icon and show/hide the menu

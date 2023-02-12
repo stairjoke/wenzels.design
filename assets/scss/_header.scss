@@ -6,6 +6,16 @@ header {
   display: flex;
   gap: var(--grid-gap, 500px);
 
+  a {
+    &, &:link, &:active, &:visited, &:hover, &:focus {
+      text-decoration: none;
+    }
+
+    &:focus-visible h1 {
+      text-decoration: underline;
+    }
+  }
+
   h1 {
     flex-grow: 1;
     margin-bottom: 0;
