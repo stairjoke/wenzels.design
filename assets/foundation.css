@@ -27,7 +27,7 @@ p {
   margin: 0;
 }
 
-h1 + p, h2 + p, h3 + p, h4 + p, p + p, ul + p, ol + p, figure + p {
+h1 + p, h1 ul, h1 ol, h2 + p, h2 ul, h2 ol, h3 + p, h3 ul, h3 ol, h4 + p, h4 ul, h4 ol, p + p, p ul, p ol, ul + p, ul ul, ul ol, ol + p, ol ul, ol ol, figure + p, figure ul, figure ol {
   margin: 0.5rem 0 0 0;
 }
 
@@ -299,10 +299,13 @@ aside button, aside .button, aside a[role=button] {
   text-align: center;
 }
 
-main.default section, main.default h2, main.default p {
-  max-width: 49.5rem;
-  margin-left: auto;
-  margin-right: auto;
+@media (min-width: 55.5rem) {
+  main.default section, main.default h2, main.default h3, main.default h4, main.default h5, main.default ul, main.default ol, main.default p {
+    max-width: 49.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
 }
 main.default section {
   margin-top: var(--spacer-line-break);

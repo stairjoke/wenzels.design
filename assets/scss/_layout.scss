@@ -11,10 +11,13 @@ main.default {
   // The mobile layout technically has columns, but it uses only all four at
   // the same time.
 
-  section, h2, p {
-    max-width: 49.5rem;
-    margin-left: auto;
-    margin-right: auto;
+  @media (min-width: 55.5rem){ // = 49.5rem + 2x3rem body-margin on desktop see foundation.scss
+    section, h2, h3, h4, h5, ul, ol, p {
+      max-width: 49.5rem;
+      margin-left: auto;
+      margin-right: auto;
+      box-sizing: border-box;
+    }
   }
 
   section {

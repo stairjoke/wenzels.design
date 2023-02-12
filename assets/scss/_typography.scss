@@ -24,7 +24,7 @@ p{
   margin: 0;
 }
 h1, h2, h3, h4, p, ul, ol, figure {
-  &+p {
+  &+p, ul, ol {
     margin: .5rem 0 0 0;
   }
 }
