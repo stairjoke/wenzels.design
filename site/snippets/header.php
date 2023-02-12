@@ -1,6 +1,7 @@
 <html lang="de-DE">
 	<head>
 		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
 		<!-- Using Kirby CSS feature -->
 		<?= css('assets/foundation.css') ?>
