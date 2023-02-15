@@ -56,6 +56,19 @@ svg.icon {
 	width: 1.5rem;
 	height: 1.5rem;
   display: block;
+
+  use {
+    @include colors.day-colors();
+  }
+
+  &.inline {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin-right: .25rem;
+    &.right {
+      margin-left: .25rem;
+    }
+  }
 }
 
 img {
