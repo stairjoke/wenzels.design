@@ -233,6 +233,7 @@ p.teaser {
   }
 }
 button, .button, a[role=button] {
+  white-space: nowrap;
   display: block;
   font-family: proxima-nova, "Proxima Nova", sans-serif;
   font-weight: 500;
@@ -590,6 +591,27 @@ svg.icon {
   width: 1.5rem;
   height: 1.5rem;
   display: block;
+}
+svg.icon use {
+  --text-color-body-text: #212121;
+  --text-color-dimmed: #8C8C8C;
+  --text-color-link: #545454;
+  --text-color-inverted: #FFFFFF;
+  --text-color-high-contrast: #000000;
+  --color-visual-grouping: #F3F2F1;
+  --color-page: #FCFDFB;
+  --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-accent: #5B8D3E;
+  --status-color-success: #0AAE49;
+  --status-color-error: #AE0A38;
+}
+svg.icon.inline {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-right: 0.25rem;
+}
+svg.icon.inline.right {
+  margin-left: 0.25rem;
 }
 
 img {
