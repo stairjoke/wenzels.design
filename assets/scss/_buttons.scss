@@ -3,6 +3,7 @@
 //Buttons
 
 button, .button, a[role=button] {
+  white-space: nowrap;
   display: block;
   @include typography.body-text();
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
