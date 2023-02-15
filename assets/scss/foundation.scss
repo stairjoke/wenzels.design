@@ -61,6 +61,16 @@ svg.icon {
     @include colors.day-colors();
   }
 
+
+  --transition-duration: 240ms;
+  --primary-transform: 1;
+  --secondary-transform: 0;
+  *:hover > & {
+    --transition-duration: 120ms;
+    --primary-transform: 0;
+    --secondary-transform: 1;
+  }
+
   &.inline {
     display: inline-block;
     vertical-align: text-bottom;
