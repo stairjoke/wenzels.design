@@ -16,7 +16,7 @@ $color-day-success: #0AAE49;
 $color-day-error: #AE0A38;
 
 //CSS Variables
-:root {
+@mixin day-colors() {
   --text-color-body-text: #{$color-day-body-text};
   --text-color-dimmed: #{$color-day-dimmed-text};
   --text-color-link: #{$color-day-link-text};
@@ -30,4 +30,8 @@ $color-day-error: #AE0A38;
   --color-accent: #{$color-day-accent};
   --status-color-success: #{$color-day-success};
   --status-color-error: #{$color-day-error};
+}
+
+:root {
+  @include day-colors();
 }
