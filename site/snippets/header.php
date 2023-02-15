@@ -35,7 +35,9 @@
 						echo("<li><a href='". $navItem->url() ."' class='button nav-button'>". $navItem->title() ."</a></li>");
 					}
 				?>
-				<li><a href="<?= $site->contact_link() ?>" role="button" class="nav-button CTA"><?= $site->contact_label() ?></a></li>
+				<li><a href="<?= $site->contact_link() ?>" role="button" class="nav-button CTA"><svg class="icon inline">
+					<use href="/assets/iconSprite.svg#letter-heart"></use>
+				</svg><?= $site->contact_label() ?></a></li>
 			</ul>
 		</nav>
 	</header>
