@@ -20,15 +20,19 @@
 
 <symbol viewBox="0 0 24 24" id="error">
 	<title>Error Icon</title>
-	<path d="M18.75 5.25L5.25 18.75" stroke="#212121" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M18.75 18.75L5.25 5.25" stroke="#212121" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+	<g stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" style="stroke: currentColor">
+		<path d="M18.75 5.25L5.25 18.75" />
+		<path d="M18.75 18.75L5.25 5.25" />
+	</g>
 </symbol>
 
 <symbol viewBox="0 0 24 24" id="menu">
 	<title>Menu Icon</title>
-	<path d="M3.75 12H20.25" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M3.75 6H20.25" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-	<path d="M3.75 18H20.25" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+	<g stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: currentColor">
+		<path d="M3.75 12H20.25" />
+		<path d="M3.75 6H20.25" />
+		<path d="M3.75 18H20.25" />
+	</g>
 </symbol>
 
 
