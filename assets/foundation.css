@@ -430,7 +430,7 @@ main.default .two-columns > div {
 }
 main.default figure {
   border-radius: var(--border-radius-default);
-  margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+  margin: var(--spacer-line-break) 0 var(--spacer-line-break) 0;
   box-sizing: border-box;
 }
 main.default figure:first-child {

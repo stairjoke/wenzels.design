@@ -183,7 +183,7 @@ main.default {
 
   figure {
     border-radius: var(--border-radius-default);
-    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    margin: var(--spacer-line-break) 0 var(--spacer-line-break) 0;
     &:first-child {
       margin-top: 0;
     }
