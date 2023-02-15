@@ -4,6 +4,8 @@
 
 button, .button, a[role=button] {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: block;
   @include typography.body-text();
   padding: calc(0.75rem - 1px) calc(1rem - 1px);

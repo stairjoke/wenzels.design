@@ -234,6 +234,8 @@ p.teaser {
 }
 button, .button, a[role=button] {
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: block;
   font-family: proxima-nova, "Proxima Nova", sans-serif;
   font-weight: 500;
