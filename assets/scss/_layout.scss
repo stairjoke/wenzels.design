@@ -69,11 +69,39 @@ main.default {
         gap: var(--grid-gap);
       }
     }
+
+    // Clearfloat for section block that uses float instead of flex.
+    @media (max-width: #{scss-variables.$break-point-tablet-}) {
+      & > div:after {
+        display: block;
+        clear: both;
+        width: 100%;
+        height: 1px;
+        content: ' ';
+        font-size: 0;
+      }
+    }
+    @supports not selector(section:has(aside)) {
+      & > div:after {
+        display: block;
+        clear: both;
+        width: 100%;
+        height: 1px;
+        content: ' ';
+        font-size: 0;
+      }
+    }
   }
 
   // The aside, by default, stacks above the div.main (which uses order: 1)
   aside {
     margin: 0 0 var(--spacer-full) 0;
+
+    // On viewports tablet sized and above, the aside is left/right of the text
+    // block and should not add a margin.
+    @media (min-width: #{scss-variables.$break-point-tablet-}) {
+      margin-block-end: 0;
+    }
     order: 0;
 
     // Asides flagged as .floor position themselves at the bottom of the
@@ -81,7 +109,14 @@ main.default {
     &.floor {
       align-self: flex-end;
       order: 2;
-      margin: var(--spacer-line-break) 0 0 0;
+
+      // If enabling flex conditionally based on section:has(aside) fails,
+      // the aside uses float or is stacked above the main-content
+      // as if .floor was not applied. It should use the margin
+      // designed to cope with that positioning
+      @supports selector(section:has(aside)) {
+        margin: var(--spacer-line-break) 0 0 0;
+      }
     }
 
     @media (max-width: #{scss-variables.$break-point-tablet-}) {
@@ -124,6 +159,20 @@ main.default {
     box-sizing: border-box;
     flex-grow: 0;
     flex-shrink: 0;
+
+    // If :has() is not supported, flex is not used and content always
+    // floats. Currently the case in Firefox (Feb 15, 2023). Otherwise it
+    // would just stack "static" and look even worse
+    @supports not selector(section:has(aside)) {
+      @media (min-width: #{scss-variables.$break-point-phablet}) {
+        float: right;
+        margin: 0 0 var(--spacer-line-break) var(--grid-gap);
+        width: calc(50% - (var(--grid-gap) / 2));
+      }
+      @media (min-width: #{scss-variables.$break-point-tablet-}) {
+        width: calc(33% - (var(--grid-gap) / 2));
+      }
+    }
   }
 
   .two-columns > div {
@@ -134,7 +183,7 @@ main.default {
 
   figure {
     border-radius: var(--border-radius-default);
-    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    margin: 0;
     box-sizing: border-box;
 
     * {
@@ -143,6 +192,7 @@ main.default {
 
     &.floating-illustration {
       background-color: var(--color-visual-grouping);
+      margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
       padding: var(--grid-gap);
       box-sizing: border-box;
       text-align: center;
