@@ -40,7 +40,7 @@
 	<g style="stroke: currentColor; fill: none;">
 		<g style="opacity: var(--primary-transform, 1); transition-duration: var(--transition-duration, 0); ">
 			<rect x="2" y="5" width="20" height="14" rx="3" stroke-width="2" stroke-linejoin="round"/>
-			<path d="M2 6L12 14L22 6" stroke-width="2.3" stroke-linecap="round"/>
+			<path d="M3 6L12 14L21 6" stroke-width="2.3" stroke-linecap="round"/>
 		</g>
 		<g style="opacity: var(--secondary-transform); transform: scale(max(var(--secondary-transform, 0), .5)); transition-duration: var(--transition-duration, 0); transform-origin: center;">
 			<path d="M7 9L12 14L17 9" stroke-width="13" stroke-linecap="round"/>
