@@ -183,7 +183,13 @@ main.default {
 
   figure {
     border-radius: var(--border-radius-default);
-    margin: 0;
+    margin: var(--spacer-line-break) 0 var(--spacer-full) 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
     box-sizing: border-box;
 
     * {
