@@ -643,6 +643,9 @@ svg.icon {
   width: 1.5rem;
   height: 1.5rem;
   display: block;
+  --transition-duration: 240ms;
+  --primary-transform: 1;
+  --secondary-transform: 0;
 }
 svg.icon use {
   --text-color-body-text: #212121;
@@ -656,6 +659,11 @@ svg.icon use {
   --color-accent: #5B8D3E;
   --status-color-success: #0AAE49;
   --status-color-error: #AE0A38;
+}
+*:hover > svg.icon {
+  --transition-duration: 120ms;
+  --primary-transform: 0;
+  --secondary-transform: 1;
 }
 svg.icon.inline {
   display: inline-block;
