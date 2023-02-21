@@ -38,13 +38,14 @@ main {
         text-decoration: none;
         color: var(--text-color-body-text);
 
-        transition-property: box-shadow, transform;
+        transition-property: box-shadow, transform, background-color;
         transition-duration: 240ms;
         transition-timing-function: ease-out;
 
         box-shadow:
         0 0 0 0 var(--color-shadow, #f0f),
-        inset 0 0 0 0 var(--color-shadow, f0f);
+        inset 0 0 0 0 var(--color-shadow, #f0f),
+        inset 0 0 0 0 var(--color-specular, #f0f);
       }
       &:hover, &:focus {
         transition-duration: 120ms;
@@ -52,14 +53,9 @@ main {
 
         transform: scale(1.0075);
         box-shadow:
-          0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f),
-          inset 0 0 0 0 var(--color-shadow, f0f);
-      }
-
-      &:hover, &:focus {
-        box-shadow:
-        0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f),
-        inset 0 0 0 0 var(--color-shadow, f0f);
+        0 .25rem .125rem 0 var(--color-shadow, #f0f),
+        inset 0 0 0 0 var(--color-shadow, #f0f),
+        inset 0 .0625rem .0625rem 0 var(--color-specular, #f0f);
       }
 
       &:active {
@@ -67,8 +63,9 @@ main {
 
         transform: scale(0.995);
         box-shadow:
-          0 0 0 0 var(--color-shadow, #f0f),
-          inset .125rem .125rem .125rem 0 var(--color-shadow, f0f);
+        0 0 0 0 var(--color-shadow, #f0f),
+        inset 0 .125rem .125rem 0 var(--color-shadow, #f0f),
+        inset 0 0 0 0 var(--color-specular, #f0f);
       }
     }
 
