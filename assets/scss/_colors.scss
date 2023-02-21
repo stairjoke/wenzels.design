@@ -7,11 +7,13 @@ $color-day-link-text: #545454;
 $color-day-inverted-text: #FFFFFF;
 $color-day-HC-text: #000000;
 
-$color-day-visual-grouping: #F3F2F1;
-$color-day-page: #FCFDFB; //#FDFCFB;
+$color-day-visual-grouping: #f1f2f1;
+$color-day-page: #fbfcfb;
 $color-day-shadow: rgba(0,0,0,0.15);
+$color-day-specular: rgba(255,255,255,0.28);
 
-$color-day-accent: #5B8D3E; //#F27222;
+$color-day-accent: #5B8D3E;
+$color-day-accent-hover: #659C45;
 $color-day-success: #0AAE49;
 $color-day-error: #AE0A38;
 
@@ -26,8 +28,10 @@ $color-day-error: #AE0A38;
   --color-visual-grouping: #{$color-day-visual-grouping};
   --color-page: #{$color-day-page};
   --color-shadow: #{$color-day-shadow};
+  --color-specular: #{$color-day-specular};
 
   --color-accent: #{$color-day-accent};
+  --color-accent-hover: #{$color-day-accent-hover};
   --status-color-success: #{$color-day-success};
   --status-color-error: #{$color-day-error};
 }

@@ -8,8 +8,9 @@
 		<?= (isset($class)) ? css("assets/$class.css") : ''; ?>
 		
 		<!-- CONTAINS A COLOR THAT CANNOT BE REFERENCED FROM CSS COLOR VARIABLES, NEEDS TO BE MAINTAINED! -->
-		<meta name="theme-color" media="(prefers-color-scheme: light)" content="#FCFDFB">
-		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1C1D1B">
+		<!--<meta name="theme-color" media="(prefers-color-scheme: light)" content="#fbfcfb">
+		<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1C1D1B">-->
+		<meta name="theme-color" content="#fbfcfb">
 	</head>
 <body>
 	<header>
