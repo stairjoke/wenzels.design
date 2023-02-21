@@ -6,10 +6,12 @@
   --text-color-link: #545454;
   --text-color-inverted: #FFFFFF;
   --text-color-high-contrast: #000000;
-  --color-visual-grouping: #F3F2F1;
-  --color-page: #FCFDFB;
+  --color-visual-grouping: #f1f2f1;
+  --color-page: #fbfcfb;
   --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-specular: rgba(255, 255, 255, 0.28);
   --color-accent: #5B8D3E;
+  --color-accent-hover: #659C45;
   --status-color-success: #0AAE49;
   --status-color-error: #AE0A38;
 }
@@ -245,14 +247,13 @@ button, .button, a[role=button] {
   color: var(--text-color-body-text, #f0f);
   padding: calc(0.75rem - 1px) calc(1rem - 1px);
   margin: 0 0 0.125rem 0;
-  border: solid 1px transparent;
   border-radius: var(--border-radius-default);
-  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, background-color;
   transition-duration: 240ms;
   transition-timing-function: ease-out;
   background-color: var(--color-visual-grouping, #f0f);
   border: solid 1px var(--text-color-body-text, #f0f);
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-specular, #f0f);
   text-decoration: none;
   text-align: center;
   color: var(--text-color-body-text, #f0f);
@@ -265,14 +266,14 @@ button:hover, button:focus, .button:hover, .button:focus, a[role=button]:hover, 
   transition-duration: 120ms;
   transition-timing-function: cubic-bezier(1, 1.5, 0.75, 0.87);
   transform: scale(1.05);
-  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+  box-shadow: 0 0.25rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f), inset 0 0 0 0 var(--color-specular, #f0f);
   text-decoration: none;
   color: var(--text-color-body-text, #f0f);
 }
 button:active, .button:active, a[role=button]:active {
   transition-duration: 50ms;
   transform: scale(0.995);
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0.125rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-specular, #f0f);
 }
 button.nav-button, .button.nav-button, a[role=button].nav-button {
   display: inline-block;
@@ -284,18 +285,30 @@ button.nav-button, .button.nav-button, a[role=button].nav-button {
 button.nav-button.current, .button.nav-button.current, a[role=button].nav-button.current {
   background-color: var(--color-visual-grouping, #f0f);
 }
+button.nav-button:hover, button.nav-button:focus, .button.nav-button:hover, .button.nav-button:focus, a[role=button].nav-button:hover, a[role=button].nav-button:focus {
+  background-color: var(--color-specular, #f0f);
+}
+button.nav-button.CTA:hover, button.nav-button.CTA:focus, .button.nav-button.CTA:hover, .button.nav-button.CTA:focus, a[role=button].nav-button.CTA:hover, a[role=button].nav-button.CTA:focus {
+  background-color: var(--color-accent-hover, #f0f);
+}
 button.CTA, .button.CTA, a[role=button].CTA {
   background-color: var(--color-accent, #f0f);
   color: var(--text-color-inverted);
-  border: solid 1px var(--color-accent, #f0f);
+  border-color: transparent;
+  border: none;
 }
 button.CTA:link, button.CTA:active, button.CTA:visited, .button.CTA:link, .button.CTA:active, .button.CTA:visited, a[role=button].CTA:link, a[role=button].CTA:active, a[role=button].CTA:visited {
   text-decoration: none;
   color: var(--text-color-inverted, #f0f);
 }
 button.CTA:hover, button.CTA:focus, .button.CTA:hover, .button.CTA:focus, a[role=button].CTA:hover, a[role=button].CTA:focus {
+  background-color: var(--color-accent-hover, #f0f);
   color: var(--text-color-inverted, #f0f);
   text-decoration: none;
+  box-shadow: 0 0.5rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, #f0f), inset 0 0.0625rem 0.0625rem 0 var(--color-specular, #f0f);
+}
+button.CTA:active, .button.CTA:active, a[role=button].CTA:active {
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0.125rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-specular, #f0f);
 }
 aside button, aside .button, aside a[role=button] {
   display: block;
@@ -602,7 +615,7 @@ header nav a.current {
   --spacer-full: 2rem;
   --spacer-line-break: 1rem;
   --grid-gap: 1rem;
-  --border-radius-default: 0.5rem;
+  --border-radius-default: 0.25rem;
   --body-margin: 0.5rem;
 }
 @media (min-width: 744px) {
@@ -653,10 +666,12 @@ svg.icon use {
   --text-color-link: #545454;
   --text-color-inverted: #FFFFFF;
   --text-color-high-contrast: #000000;
-  --color-visual-grouping: #F3F2F1;
-  --color-page: #FCFDFB;
+  --color-visual-grouping: #f1f2f1;
+  --color-page: #fbfcfb;
   --color-shadow: rgba(0, 0, 0, 0.15);
+  --color-specular: rgba(255, 255, 255, 0.28);
   --color-accent: #5B8D3E;
+  --color-accent-hover: #659C45;
   --status-color-success: #0AAE49;
   --status-color-error: #AE0A38;
 }

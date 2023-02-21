@@ -30,24 +30,21 @@ main article a.card {
 main article a.card, main article a.card:visited, main article a.card:active {
   text-decoration: none;
   color: var(--text-color-body-text);
-  transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform, background-color;
   transition-duration: 240ms;
   transition-timing-function: ease-out;
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-specular, #f0f);
 }
 main article a.card:hover, main article a.card:focus {
   transition-duration: 120ms;
   transition-timing-function: cubic-bezier(1, 1.5, 0.75, 0.87);
   transform: scale(1.0075);
-  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
-}
-main article a.card:hover, main article a.card:focus {
-  box-shadow: 0.5rem 0.5rem 1px 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, f0f);
+  box-shadow: 0 0.25rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-shadow, #f0f), inset 0 0.0625rem 0.0625rem 0 var(--color-specular, #f0f);
 }
 main article a.card:active {
   transition-duration: 100ms;
   transform: scale(0.995);
-  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0.125rem 0.125rem 0.125rem 0 var(--color-shadow, f0f);
+  box-shadow: 0 0 0 0 var(--color-shadow, #f0f), inset 0 0.125rem 0.125rem 0 var(--color-shadow, #f0f), inset 0 0 0 0 var(--color-specular, #f0f);
 }
 main article figure, main article img {
   width: 100%;
